@@ -67,3 +67,64 @@ svg, img {
 .nav-link:hover {
 	color: black;
 }
+
+.main-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100% - 48px);
+	padding: 16px;
+	box-sizing: border-box;
+}
+
+.main-section-container {
+	width: 100%;
+	max-width: 964px;
+	margin-bottom: 6rem;
+}
+
+.main-section-heading {
+	text-transform: uppercase;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 36px;
+	margin: 0;
+}
+
+.main-section-content {
+	font-family: inherit;
+	font-size: 24px;
+	margin: 0;
+	text-align: justify;
+	margin-top: 16px;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.main-section-actions {
+	display: flex;
+	gap: 16px;
+	margin-top: 32px;
+}
+
+.main-section-action {
+	padding: 8px 16px;
+	font-family: inherit;
+	font-size: 1.5rem;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 500;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	border: none;
+}
+
+.main-section-action.primary {
+	background: #0071F3;
+	/* background: linear-gradient(135deg, rgba(0,113,243,1) 0%, rgba(252,70,107,1) 50%, rgba(247,165,39,1) 100%); */
+	color: white;
+}
+
+.main-section-action.secondary {
+	background: #EFEFEF;
+	color: #0071F3;
+}
