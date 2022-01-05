@@ -15,7 +15,7 @@ svg, img {
 	width: 100%;
 	height: 48px;
 	box-sizing: border-box;
-	padding: 0 8px;
+	padding: 0 16px;
 	position: sticky;
 	top: 0;
 	background: white;
@@ -34,12 +34,20 @@ svg, img {
 
 .nav-logo {
 	/* font-family: 'Roboto', sans-serif; */
+	display: flex;
+	align-items: center;
+	gap: 16px;
 	font-family: 'Roboto Mono', monospace;
 	color: black;
 	font-size: 18px;
 	font-weight: 700;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+.nav-icon {
+	border-radius: 50%;
+	height: 24px;
 }
 
 .nav-links {
