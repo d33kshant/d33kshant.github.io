@@ -12,8 +12,7 @@ svg, img {
 } 
 
 * {
-	transition: color 0.8s ease;
-	transition: background-color 0.8s ease;
+	transition: all 0.8s ease;
 }
 
 .nav-main {
@@ -38,7 +37,6 @@ svg, img {
 }
 
 .nav-logo {
-	/* font-family: 'Roboto', sans-serif; */
 	display: flex;
 	align-items: center;
 	gap: 16px;
@@ -85,12 +83,12 @@ svg, img {
 
 .nav-dark-icon {
 	transform: translateY(50%);
-	transition: transform 0.5s ease;
+	transition: transform 0.3s ease;
 }
 
 .nav-light-icon {
 	transform: translateY(105%);
-	transition: transform 0.5s ease;
+	transition: transform 0.3s ease;
 }
 
 .main-section {
