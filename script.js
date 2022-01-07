@@ -1,9 +1,7 @@
-let darkTheme = false
+let darkTheme = localStorage.getItem('dark-theme') === 'true' || false
 
-const onThemeChange = () => {
-
-	darkTheme = !darkTheme
-
+const onThemeChange = () => {	
+	
 	if(darkTheme){
 		document.querySelector('body').classList.add('dark')
 		document.querySelector('.nav-dark-icon').style.transform = 'translateY(-105%)'
@@ -13,6 +11,14 @@ const onThemeChange = () => {
 		document.querySelector('.nav-dark-icon').style.transform = 'translateY(50%)'
 		document.querySelector('.nav-light-icon').style.transform = 'translateY(105%)'
 	}
+	
+	localStorage.setItem('dark-theme', darkTheme.toString())
 }
 
-document.querySelector('.nav-theme-toggle').addEventListener('click', onThemeChange)
+const toggleTheme = () => {
+	darkTheme = !darkTheme
+	onThemeChange()
+}
+
+document.querySelector('.nav-theme-toggle').addEventListener('click', toggleTheme)
+onThemeChange()
