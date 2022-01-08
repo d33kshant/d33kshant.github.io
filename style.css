@@ -185,13 +185,37 @@ svg, img {
 	color: gray;
 }
 
+.content-sub-heading {
+	text-transform: uppercase;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 24px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+}
+
+.skill-carousel {
+	display: inline;
+	/* position: relative; */
+	align-items: center;
+	overflow: hidden;
+	line-height: 36px;
+	letter-spacing: 4px;
+}
+
+.skill-carousel img {
+}
+
+/* DARK THEME */
+
 .dark {
-	background: #121212;
+	background: #000;
 }
 
 .dark .nav-main {
-	background: #272727;
-	border-color: #414141;
+	background: #111;
+	border-color: #333;
 }
 
 .dark .nav-logo {
@@ -205,3 +229,11 @@ svg, img {
 .dark .content-paragraph {
 	color: rgba(255, 255, 255, 0.5);
 }
+
+.dark .content-sub-heading {
+	color: white;
+}
+
+/* .dark .skill-carousel::after, .dark .skill-carousel::before {
+	background: linear-gradient(to right, #111 0%, rgba(0, 0, 0, 0) 100%);
+} */
