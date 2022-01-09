@@ -195,13 +195,23 @@ svg, img {
 	margin: 0;
 }
 
+.skill-carousel-container {
+	overflow: hidden;
+	border-left: 1px solid #dad0ce;
+	border-right: 1px solid #dad0ce;
+	padding: 8px 0;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+}
+
 .skill-carousel {
-	display: inline;
+	display: flex;
 	/* position: relative; */
 	align-items: center;
-	overflow: hidden;
-	line-height: 36px;
-	letter-spacing: 4px;
+	/* overflow: hidden; */
+	gap: 8px;
+	animation: carousel-scroll 40s infinite linear;
 }
 
 .skill-carousel img {
@@ -234,6 +244,21 @@ svg, img {
 	color: white;
 }
 
+.dark .skill-carousel-container {
+	border-color: #333;
+}
+
 /* .dark .skill-carousel::after, .dark .skill-carousel::before {
 	background: linear-gradient(to right, #111 0%, rgba(0, 0, 0, 0) 100%);
 } */
+
+/* ANIMATION */
+
+@keyframes carousel-scroll {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-80.5%);
+	}
+}
