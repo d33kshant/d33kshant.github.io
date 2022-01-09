@@ -214,8 +214,6 @@ svg, img {
 	animation: carousel-scroll 40s infinite linear;
 }
 
-.skill-carousel img {
-}
 
 /* DARK THEME */
 
@@ -259,6 +257,6 @@ svg, img {
 		transform: translateX(0%);
 	}
 	100% {
-		transform: translateX(-80.5%);
+		transform: translateX(-81.45%);
 	}
 }
