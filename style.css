@@ -188,7 +188,7 @@ svg, img {
 .content-sub-heading {
 	text-transform: uppercase;
 	font-family: 'Roboto Mono', monospace;
-	font-size: 24px;
+	font-size: 28px;
 	display: flex;
 	align-items: center;
 	gap: 8px;
