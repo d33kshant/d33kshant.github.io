@@ -178,6 +178,38 @@ section {
 	gap: 8px;
 }
 
+.skills-list {
+	padding: 16px;
+	box-sizing: border-box;
+	max-width: 1024px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 64px;
+}
+
+.skill-card {
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 64px;
+	padding: 8px 12px;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.1);
+	font-size: 18px;
+	display: inline-block;
+	cursor: pointer;
+	margin: 4px 2px;
+}
+
+.skill-card-container {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.skill-card svg {
+	height: 18px;
+	fill: currentColor;
+}
+
 @media (max-width: 1000px) {
 	.projects-grid {
 		grid-template-columns: 1fr 1fr;
