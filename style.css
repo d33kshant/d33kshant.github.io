@@ -51,6 +51,7 @@ img, svg {
 	display: flex;
 	align-items: center;
 	gap: 8px;
+	font-weight: 600;
 }
 
 .main-action:hover {
@@ -61,7 +62,6 @@ img, svg {
 	background: #3B8EEA;
 	border-color: #3B8EEA;
 	color: #1c1c1c;
-	font-weight: 600;
 }
 
 .action-primary:hover {
@@ -120,13 +120,13 @@ section {
 	/* max-width: 300px; */
 	padding: 16px;
 	border-radius: 4px;
-	cursor: pointer;
+	cursor: default;
 	transition: background-color 0.5s ease;
 }
 
-/* .project-card:hover {
+.project-card:hover {
 	background: rgba(255, 255, 255, 0.1);
-} */
+}
 
 .project-title {
 	margin: 8px 0;
@@ -155,9 +155,9 @@ section {
 	text-decoration: none;
 	padding: 8px 12px;
 	/* background: #0DBC79; */
-	background: #3B8EEA;
 	border-radius: 4px;
 	color: #1c1c1c;
+	background: #3B8EEA;
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -195,7 +195,7 @@ section {
 	background: rgba(255, 255, 255, 0.1);
 	font-size: 18px;
 	display: inline-block;
-	cursor: pointer;
+	cursor: default;
 	margin: 4px 2px;
 }
 
@@ -208,6 +208,64 @@ section {
 .skill-card svg {
 	height: 18px;
 	fill: currentColor;
+}
+
+#certificates {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.certificates-slide {
+	padding-bottom: 16px;
+	margin: 96px 0;
+	box-sizing: border-box;
+	width: 100%;
+	overflow-x: scroll;
+	max-width: 1024px;
+	white-space: nowrap;
+	letter-spacing: 8px;
+	position: relative;
+}
+
+.certificate-card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	display: inline-block;
+	white-space: normal;
+	letter-spacing: normal;
+}
+
+.certificate-card:hover .certificate-info {
+	transform: translateY(0);
+}
+
+.certificate-info {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	transform: translateY(100%);
+	background: rgba(0, 0, 0, 0.8);
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	box-sizing: border-box;
+	transition: transform 0.5s ease;
+}
+
+.certificate-title {
+	margin: 0;
+	color: white;
+	font-size: 24px;
+	font-weight: 600;
+	font-family: 'Roboto Mono', monospace;
+	text-transform: uppercase;
+}
+
+.certificate-provider {
+	margin: 0;
+	color: #a8a8a8;
 }
 
 .page-footer {
@@ -240,5 +298,25 @@ section {
 @media (max-width: 658px) {
 	.projects-grid {
 		grid-template-columns: 1fr;
+	}
+}
+
+@media not screen and (max-width: 658px) {
+	.certificates-slide::-webkit-scrollbar {
+		/* width: 4px; */
+		height: 6px;
+		cursor: pointer;
+	}
+	 
+	.certificates-slide::-webkit-scrollbar-track {
+		background-color: rgba(255, 255, 255, 0.1);
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+	}
+	
+	.certificates-slide::-webkit-scrollbar-thumb {
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		background: rgba(255, 255, 255, 0.5);
 	}
 }
