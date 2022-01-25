@@ -17,7 +17,7 @@ img, svg {
 }
 
 .main-section {
-	height: 75vh;
+	height: 100%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -61,6 +61,7 @@ img, svg {
 	background: #3B8EEA;
 	border-color: #3B8EEA;
 	color: #1c1c1c;
+	font-weight: 600;
 }
 
 .action-primary:hover {
@@ -99,7 +100,7 @@ section {
 }
 
 .section-content {
-	margin: 4px;
+	margin: 8px;
 }
 
 .projects-grid {
@@ -107,7 +108,6 @@ section {
 	gap: 16px;
 	padding: 16px;
 	grid-template-columns: 1fr 1fr 1fr;
-	/* grid-template-rows: repeat(2, 168px); */
 	max-width: 1024px;
 	margin: 0 auto;
 	margin-top: 4rem;
@@ -210,13 +210,34 @@ section {
 	fill: currentColor;
 }
 
+.page-footer {
+	padding: 16px;
+	box-sizing: border-box;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.02);
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-heart {
+	color: #DA1F26;
+}
+
+.footer-link {
+	text-decoration: none;
+	color: #3B8EEA;
+}
+
+.footer-link:hover {
+	text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
 	.projects-grid {
 		grid-template-columns: 1fr 1fr;
 	}
 }
 
-@media (max-width: 640px) {
+@media (max-width: 658px) {
 	.projects-grid {
 		grid-template-columns: 1fr;
 	}
