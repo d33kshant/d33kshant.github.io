@@ -42,7 +42,6 @@ img, svg {
 .main-action {
 	padding: 8px 12px;
 	border-radius: 4px;
-	/* font-weight: 600; */
 	text-transform: uppercase;
 	text-decoration: none;
 	margin-top: 16px;
@@ -117,7 +116,6 @@ section {
 	display: flex;
 	flex-direction: column;
 	background: #292929;
-	/* max-width: 300px; */
 	padding: 16px;
 	border-radius: 4px;
 	cursor: default;
@@ -138,7 +136,6 @@ section {
 	margin: 0;
 	margin-bottom: 16px;
 	color: #ffffff6c;
-	/* text-align: justify; */
 }
 
 .project-links {
@@ -147,14 +144,9 @@ section {
 	gap: 8px;
 }
 
-/* .project-logo {
-	color: #0DBC79;
-} */
-
 .project-link {
 	text-decoration: none;
 	padding: 8px 12px;
-	/* background: #0DBC79; */
 	border-radius: 4px;
 	color: #1c1c1c;
 	background: #3B8EEA;
@@ -307,20 +299,19 @@ section {
 
 @media not screen and (max-width: 600px) {
 	.certificates-slide::-webkit-scrollbar {
-		/* width: 4px; */
 		height: 6px;
 		cursor: pointer;
 	}
 	 
 	.certificates-slide::-webkit-scrollbar-track {
 		background-color: rgba(255, 255, 255, 0.1);
-		-webkit-border-radius: 4px;
-		border-radius: 4px;
+		-webkit-border-radius: 0px;
+		border-radius: 0px;
 	}
 	
 	.certificates-slide::-webkit-scrollbar-thumb {
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
+		-webkit-border-radius: 0px;
+		border-radius: 0px;
 		background: rgba(255, 255, 255, 0.5);
 	}
 }
