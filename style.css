@@ -299,9 +299,13 @@ section {
 	.projects-grid {
 		grid-template-columns: 1fr;
 	}
+
+	.certificate-info {
+		transform: translateY(0);
+	}
 }
 
-@media not screen and (max-width: 658px) {
+@media not screen and (max-width: 600px) {
 	.certificates-slide::-webkit-scrollbar {
 		/* width: 4px; */
 		height: 6px;
