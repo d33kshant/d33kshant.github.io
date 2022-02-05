@@ -1,0 +1,34 @@
+body, html {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background: white;
+}
+
+.main-section {
+	display: flex;
+	width: fit-content;
+	height: 100%;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+.main-section-header {
+	display: flex;
+}
+
+.main-section-heading {
+	margin: 4px 0;
+	font-family: 'JetBrains Mono';
+	text-transform: uppercase;
+}
+
+.main-section-content {
+	margin: 4px 0;
+	max-width: 450px;
+	text-align: justify;
+	color: #444;
+}
