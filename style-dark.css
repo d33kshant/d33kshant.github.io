@@ -1,3 +1,17 @@
 .dark {
 	background: #121212;
 }
+
+.dark .theme-toggle-button {
+	/* color: white; */
+	/* background: lightgray;
+	border-color: darkgray; */
+}
+
+.dark .main-section-heading {
+	color: white;
+}
+
+.dark .main-section-content {
+	color: #a6a6a6;
+}
