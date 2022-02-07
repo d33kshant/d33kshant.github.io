@@ -1,6 +1,7 @@
 html {
 	width: 100%;
 	height: 100%;
+	user-select: none;
 }
 
 body {
@@ -64,6 +65,10 @@ body {
 	bottom: -32px;
 	right: 32px;
 	cursor: grab;
+}
+
+.footer-ferris-crab:active {
+	cursor: grabbing;
 }
 
 .main-section-links {
