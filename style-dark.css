@@ -4,6 +4,9 @@
 
 .dark .theme-toggle-button {
 	color: #aaa;
+}
+
+.dark .theme-toggle-button svg {
 	transform: rotateZ(360deg);
 }
 
