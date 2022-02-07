@@ -71,7 +71,6 @@ body {
 .footer-ferris-crab {
 	position: absolute;
 	bottom: -32px;
-	right: 32px;
 	cursor: grab;
 }
 
