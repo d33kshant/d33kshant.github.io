@@ -25,6 +25,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: #444;
 }
 
 .theme-toggle-button svg {
