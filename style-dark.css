@@ -3,9 +3,8 @@
 }
 
 .dark .theme-toggle-button {
-	/* color: white; */
-	/* background: lightgray;
-	border-color: darkgray; */
+	color: #aaa;
+	transform: rotateZ(360deg);
 }
 
 .dark .main-section-heading {
