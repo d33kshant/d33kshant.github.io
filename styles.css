@@ -12,6 +12,8 @@ body {
 	background: white;
 	position: relative;
 	transition: background-color .5s ease;
+	display: flex;
+	flex-direction: column;
 }
 
 .theme-toggle-button {
@@ -35,11 +37,12 @@ body {
 .main-section {
 	display: flex;
 	width: fit-content;
-	height: 100%;
+	/* height: 100%; */
 	justify-content: center;
 	flex-direction: column;
 	margin: 0 auto;
 	padding: 0 16px;
+	flex: 1;
 }
 
 .main-section-header {
@@ -62,19 +65,30 @@ body {
 
 .footer-section {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
 	border-top: 1px solid #d8d8d8;
 	position: relative;
 	margin-top: auto;
-	bottom: 64px;
 	box-sizing: border-box;
 	width: 100%;
-	transition: border-color .5s ease;
+	transition: all .5s ease;
+	padding: 16px;
+	box-sizing: border-box;
+	height: 48px;
+	color: #444;
+}
+
+.footer-external-link {
+	color: #4361ee;
+	font-family: 'JetBrains Mono';
+	text-decoration: none;
 }
 
 .footer-ferris-crab {
 	position: absolute;
-	bottom: -32px;
+	bottom: 20px;
+	right: 32px;
 	cursor: grab;
 }
 

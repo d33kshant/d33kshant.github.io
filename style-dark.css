@@ -20,8 +20,13 @@
 
 .dark .footer-section {
 	border-color: #252525;
+	color: #aaa;
 }
 
 .dark .section-link {
+	color: #4895ef;
+}
+
+.dark .footer-external-link {
 	color: #4895ef;
 }
