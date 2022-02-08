@@ -29,7 +29,7 @@ body {
 }
 
 .theme-toggle-button svg {
-	transition: all 0.5s ease;
+	transition: all 0.5s ease-out;
 }
 
 .main-section {
@@ -84,7 +84,7 @@ body {
 
 .main-section-links {
 	display: flex;
-	gap: 32px;
+	gap: 36px;
 	margin: 16px 0;
 }
 
