@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+html {
+	width: 100%;
+	height: 100%;
+	user-select: none;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font-family: 'Segoe UI';
+	background: white;
+	position: relative;
+	transition: background-color .5s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.theme-toggle-button {
+	position: fixed;
+	top: 4px;
+	right: 4px;
+	border: none;
+	background: none;
+	padding: 4px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #444;
+}
+
+.theme-toggle-button svg {
+	transition: all 0.5s ease-out;
+}
+
+.main-section {
+	display: flex;
+	width: fit-content;
+	/* height: 100%; */
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 16px;
+	flex: 1;
+}
+
+.main-section-header {
+	display: flex;
+}
+
+.main-section-heading {
+	margin: 4px 0;
+	font-family: 'JetBrains Mono';
+	text-transform: uppercase;
+	transition: color .5s ease;
+}
+
+.main-section-content {
+	margin: 4px 0;
+	max-width: 450px;
+	text-align: justify;
+	color: #444;
+}
+
+.footer-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #d8d8d8;
+	position: relative;
+	margin-top: auto;
+	box-sizing: border-box;
+	width: 100%;
+	transition: all .5s ease;
+	padding: 16px;
+	box-sizing: border-box;
+	height: 48px;
+	color: #444;
+}
+
+.footer-external-link {
+	color: #4361ee;
+	font-family: 'JetBrains Mono';
+	text-decoration: none;
+}
+
+.footer-ferris-crab {
+	position: absolute;
+	bottom: 20px;
+	right: 32px;
+	cursor: grab;
+}
+
+.footer-ferris-crab:active {
+	cursor: grabbing;
+}
+
+.main-section-links {
+	display: flex;
+	gap: 36px;
+	margin: 16px 0;
+}
+
+.main-section-links a {
+	text-decoration: none;
+	font-family: 'JetBrains Mono';
+	font-weight: 500;
+}
+
+.section-link {
+	color: #4361ee;
+	position: relative;
+}
+
+.section-link::after {
+	content: "↗";
+	position: absolute;
+	right: -12px;
+	top: 0;
+	transition: all 0.1s ease;
+}
+
+.section-link:hover::after {
+	top: -2px;
+	right: -14px;
+}
