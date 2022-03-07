@@ -1,16 +1,21 @@
-// const setDarkMode = (value) => {
-// 	if (value)
-// 		document.body.classList.replace('light', 'dark')
-// 	else document.body.classList.replace('dark', 'light')
-// 	localStorage.setItem('dark-mode', value)
-// }
+var toggle = document.getElementById('toggle-theme')
+var darkMode = JSON.parse(localStorage.getItem('dark-mode'))
 
-// const toggle = document.getElementById('toggle-theme')
-// const is_enabled = localStorage.getItem('dark-mode') || false
+function setDarkMode(enable) {
+	if (enable) {
+		document.body.classList.remove('light')
+		document.body.classList.add('dark')
+	} else {
+		document.body.classList.remove('dark')
+		document.body.classList.add('light')
+	}
+}
 
-// setDarkMode(is_enabled)
-// toggle.checked = is_enabled
+setDarkMode(darkMode)
+toggle.checked = darkMode
 
-// toggle.addEventListener('change', (event)=>{
-// 	setDarkMode(event.target.checked)
-// })
+toggle.addEventListener('change', (event)=>{
+	const value = event.target.checked
+	setDarkMode(value)
+	localStorage.setItem('dark-mode', value)
+})

@@ -32,7 +32,7 @@ body,html {
 .main-roles {
 	font-size: 16px;
 	font-weight: normal;
-	color: #A8ADB3;
+	color: #8d9399;
 }
 
 .main-subtitle {
@@ -41,19 +41,19 @@ body,html {
 	font-size: 17px;
 	max-width: 820px;
 	text-align: center;
-	color: #5F6368;
+	color: #7b8086;
 	font-weight: normal;
 }
 
 .main-link {
 	text-decoration: none;
 	margin: 0 4px;
-	color: #4285F4;
+	color: #3584E4;
 }
 
 .main-link::after {
 	color: inherit;
-	content: url("data:image/svg+xml; utf8, <svg fill='rgb(66, 133, 244)' xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'><path d='M1.932,3.6.2,1.776,10.563-8.694q.411-.412.851-.779t.7-.574l-.029-.206-.969.088q-.646.059-1.38.059H4.017V-12.4H16.2V-.194H13.851V-6.047q0-.735.059-1.441t.117-1.088l-.206-.059q-.206.294-.631.794t-.837.912Z' transform='translate(-0.2 12.4)'/></svg>");
+	content: url("data:image/svg+xml; utf8, <svg fill='rgb(53, 132, 228)' xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'><path d='M1.932,3.6.2,1.776,10.563-8.694q.411-.412.851-.779t.7-.574l-.029-.206-.969.088q-.646.059-1.38.059H4.017V-12.4H16.2V-.194H13.851V-6.047q0-.735.059-1.441t.117-1.088l-.206-.059q-.206.294-.631.794t-.837.912Z' transform='translate(-0.2 12.4)'/></svg>");
 	margin-left: 4px;
 }
 
@@ -99,7 +99,7 @@ body,html {
 }
 
 input:checked + .main-toggle::before {
-	background: royalblue;
+	background: #78AEED;
 }
 
 input:checked + .main-toggle::after {
@@ -130,5 +130,15 @@ input:checked + .main-toggle::after {
 }
 
 .dark .main-link {
-	color: royalblue;
+	color: #78AEED;
+}
+
+.dark .main-link::after {
+	color: inherit;
+	content: url("data:image/svg+xml; utf8, <svg fill='rgb(120, 174, 237)' xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'><path d='M1.932,3.6.2,1.776,10.563-8.694q.411-.412.851-.779t.7-.574l-.029-.206-.969.088q-.646.059-1.38.059H4.017V-12.4H16.2V-.194H13.851V-6.047q0-.735.059-1.441t.117-1.088l-.206-.059q-.206.294-.631.794t-.837.912Z' transform='translate(-0.2 12.4)'/></svg>");
+	margin-left: 4px;
+}
+
+.dark label {
+	color: white;
 }
