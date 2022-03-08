@@ -41,6 +41,7 @@ body,html {
 	font-size: 16px;
 	font-weight: normal;
 	color: #8d9399;
+	text-align: center;
 }
 
 .main-subtitle {
@@ -120,6 +121,7 @@ input:checked + .main-toggle::after {
 	justify-content: center;
 	gap: 16px;
 	align-items: center;
+	width: 100%;
 }
 
 .social-links a {
@@ -127,17 +129,34 @@ input:checked + .main-toggle::after {
 	text-decoration: none;
 }
 
+.projects-section {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+.projects-section .main-title {
+	font-size: 24px;
+}
+
+.projects-section .main-subtitle {
+	margin-top: 8px;
+}
+
 /* Media Queries */
 @media (max-width: 640px) {
-	.main-section {
+	/* .main-section {
 		align-items: flex-start;
 	}
 	.main-title, .main-subtitle {
 		text-align: left;
-	}
-	.social-links {
+	} */
+	/* .social-links {
 		justify-content: flex-start;
-	}
+	} */
 }
 
 /* Dark Theme */
