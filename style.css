@@ -29,6 +29,14 @@ body,html {
 	color: #3C4043;
 }
 
+.text-gradient {
+	background: linear-gradient(-180deg, #3584E4, #26A269);
+	background: -webkit-linear-gradient(-180deg, #3584E4, #26A269);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .main-roles {
 	font-size: 16px;
 	font-weight: normal;
@@ -47,7 +55,7 @@ body,html {
 
 .main-link {
 	text-decoration: none;
-	margin: 0 4px;
+	margin: 0 2px;
 	color: #3584E4;
 }
 
