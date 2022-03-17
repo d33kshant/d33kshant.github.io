@@ -34,6 +34,26 @@ body,html {
 	max-width: 540px;
 }
 
+.external-links {
+	display: flex;
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.external-link {
+	color: #1a73e8;
+	text-decoration: none;
+}
+
+.external-link::after {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-left: 2px;
+	background: url('/assets/external-link.svg');
+}
+
 #main {
 	width: 100%;
 	height: 100%;
