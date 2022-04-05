@@ -1,11 +1,16 @@
+import BackEnd from './secttions/BackEnd'
+import FrontEnd from './secttions/FrontEnd'
+import MainSection from './secttions/Main'
 import './styles/App.css'
 
 function App() {
-  return (
-    <div>
-      Hello World!
-    </div>
-  )
+	return (
+		<>
+		<MainSection />
+		<FrontEnd />
+		<BackEnd />
+		</>
+	)
 }
 
 export default App
