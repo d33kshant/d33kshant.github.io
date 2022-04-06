@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const BackEnd = () => {
 
 	return (
-		<div className="flex flex-col md:flex-row h-full w-full bg-[#a8dadc] items-center text-[#f1faee]">
+		<div className="flex flex-col md:flex-row h-full w-full bg-[#407ba7] items-center text-[#8d99ae]">
 			<div className="flex w-full h-1/2 md:w-1/2 md:h-full items-center justify-center text-[#e63946]">
 				<motion.div>
 					<svg
@@ -13,7 +13,7 @@ const BackEnd = () => {
 					</svg>
 				</motion.div>
 			</div>
-			<div className="p-[16px] text-center md:text-left flex items-center justify-center w-full h-1/2 md:w-1/2 md:h-full bg-[#457b9d] text-[64px] font-manrope font-bold">
+			<div className="p-[16px] text-center md:text-left flex items-center justify-center w-full h-1/2 md:w-1/2 md:h-full bg-[#002962] text-[64px] font-manrope font-bold">
 				BackEnd Skills
 			</div>
 		</div>
