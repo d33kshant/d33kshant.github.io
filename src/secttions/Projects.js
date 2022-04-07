@@ -14,8 +14,8 @@ const Projects = () => {
 	return (
 		<div className="relative w-full h-full bg-slate-600 flex flex-col p-4">
 			<h1 className="text-white text-4xl font-manrope font-bold w-full text-center">Projects</h1>
-			<div className="w-full h-full">
-				{projects.map(project=><Project {...project} />)}
+			<div className="w-full h-full flex justify-center items-start md:items-center">
+				{projects.map(project=><Project key={project.title} {...project} />)}
 			</div>
 			<button onClick={()=>alert('Left')} className="w-8 h-8 rounded-full absolute top-1/2 left-4 z-10 text-slate-900" >
 				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 16 16">
