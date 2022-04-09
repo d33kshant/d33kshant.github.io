@@ -6,7 +6,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       'sans': 'Open Sans, sans-serif',
-      'manrope': 'Manrope, sans-serif'
+      'manrope': 'Manrope, sans-serif',
+      'monospace': 'Roboto Mono, monospace'
     }
   },
   plugins: [],
