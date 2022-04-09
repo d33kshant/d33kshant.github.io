@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 const FrontEnd = () => {
 
 	return (
-		<div className="flex flex-col-reverse md:flex-row h-full w-full bg-[#a8dadc] items-center text-[#f1faee]">
-			<div className="p-[16px] text-center md:text-left flex items-center justify-center w-full h-1/2 md:w-1/2 md:h-full bg-[#457b9d]">
+		<div className="flex flex-col md:flex-row h-full w-full items-center dots-light text-zinc-500 bg-white">
+			<div className="p-[16px] text-center md:text-left flex items-center justify-center w-full h-1/2 md:w-1/2 md:h-full text-zinc-900">
 				<motion.h1
 					initial={{
 						x: -32,
@@ -14,7 +14,7 @@ const FrontEnd = () => {
 						x: 0,
 						opacity: 1
 					}}
-					className='text-[64px] font-manrope font-bold'
+					className='text-4xl md:text-[64px] font-manrope font-bold'
 				>
 				Frontend Skills
 				</motion.h1>
