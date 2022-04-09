@@ -12,8 +12,8 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<div className="relative w-full h-full bg-slate-600 flex flex-col p-4">
-			<h1 className="text-white text-4xl font-manrope font-bold w-full text-center">Projects</h1>
+		<div id="projects" className="relative w-full h-full bg-slate-600 flex flex-col p-4">
+			<h1 className="text-white text-4xl font-manrope font-bold w-full text-center m-4">Projects</h1>
 			<div className="w-full h-full flex justify-center items-start md:items-center">
 				{projects.map(project=><Project key={project.title} {...project} />)}
 			</div>
