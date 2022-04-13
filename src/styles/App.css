@@ -1,9 +1,0 @@
-.dots-light {
-	background: white;
-	background-image:
-		linear-gradient(lightgray 1px, transparent 0),
-		linear-gradient(90deg, lightgray 1px, transparent 0),
-		linear-gradient(hsla(0, 0%, 100%, .3) 1px, transparent 0),
-		linear-gradient(90deg, hsla(0, 0%, 100%, .3) 1px, transparent 0);
-	background-size: calc(100vh/10) calc(100vh/10), calc(100vh/10) calc(100vh/10), 15px 15px, 15px 15px;
-}
