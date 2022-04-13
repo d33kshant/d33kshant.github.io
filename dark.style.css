@@ -1,0 +1,21 @@
+.dark {
+	background: #242424;
+}
+
+.dark .navbar-container {
+	border-color: #4F4F4F;
+	background: #303030;
+	box-shadow: none;
+}
+
+.dark .navbar-link {
+	color: #aaa;
+}
+
+.dark .navbar-content-divider {
+	background: #4F4F4F;
+}
+
+.dark .active-navbar-link {
+	color: #78AEED;
+}
