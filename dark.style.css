@@ -1,11 +1,16 @@
 .dark {
 	background: #242424;
+	color: white;
 }
 
 .dark .navbar-container {
 	border-color: #4F4F4F;
 	background: #303030;
 	box-shadow: none;
+}
+
+.dark .navbar-logo {
+	color: white;
 }
 
 .dark .navbar-link {
@@ -21,10 +26,10 @@
 }
 
 .dark .button-theme-toggle {
-	color: #f8e45c;
-	background: #f8e45c33;
+	color: #ffbe6f;
+	background: #ffbe6f33;
 }
 
 .dark .button-theme-toggle svg {
-	fill: 	#f8e45c;
+	fill: 	#ffbe6f;
 }
