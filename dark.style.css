@@ -19,3 +19,12 @@
 .dark .active-navbar-link {
 	color: #78AEED;
 }
+
+.dark .button-theme-toggle {
+	color: #f8e45c;
+	background: #f8e45c33;
+}
+
+.dark .button-theme-toggle svg {
+	fill: 	#f8e45c;
+}
