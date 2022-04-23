@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Tab from './components/Tab'
 import TabBar from './components/TabBar'
@@ -22,13 +22,28 @@ const tabs = [
 function App() {
 
 	const [currentTab, setCurrentTab] = useState(0)
+	const [theme, setTheme] = useState('light')
+
+	useEffect(() => {
+		const _theme = localStorage.getItem('theme')
+		if (_theme) setTheme(_theme)
+		document.body.classList = [_theme]
+	}, [])
+
+	const toggleTheme = () => {
+		if (theme === 'light') {
+			setTheme('dark')
+		} else setTheme('light')
+		localStorage.setItem('theme', theme)
+		document.body.classList = [theme]
+	}
 
 	return (
 		<>
 		<Header />
 		<TabBar>
 			{ tabs.map((tab, index)=><Tab active={currentTab===index} onClick={()=>setCurrentTab(index)} key={index}>{tab.icon}{tab.title}</Tab>) }
-			<button className="enable-dark-mode">
+			<button onClick={toggleTheme} className="enable-dark-mode">
 				<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 			</button>
 		</TabBar>
