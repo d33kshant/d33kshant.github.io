@@ -1,0 +1,12 @@
+.enable-dark-mode {
+  margin-left: auto;
+  width: max-content;
+  padding: 8px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  opacity: .5;
+  cursor: pointer;
+}

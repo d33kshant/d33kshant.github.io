@@ -1,0 +1,46 @@
+.main-header {
+	display: flex;
+	justify-content: center;
+	background: whitesmoke;
+}
+
+.header-container {
+	max-width: 780px;
+	width: 100%;
+	padding: 4em 16px;
+	box-sizing: border-box;
+	display: flex;
+	gap: 2em;
+}
+
+.avatar-image {
+	border-radius: 50%;
+}
+
+.header-info h1, .header-info p {
+	margin: 0;
+	font-weight: normal;
+}
+
+.header-actions {
+	display: flex;
+	gap: 8px;
+}
+
+.pronouns {
+	opacity: .6;
+	margin: 4px 0 !important;
+}
+
+@media (max-width: 640px) {
+	.header-container {
+		gap: 1em;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+	}
+
+	.header-actions {
+		justify-content: center;
+	}
+}
