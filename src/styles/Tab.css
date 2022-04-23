@@ -13,5 +13,9 @@
 	cursor: default;
 	opacity: 1.2;
 	box-sizing: border-box;
-	color: #1f6feb;
+	color: #3584e4;
+}
+
+.dark .active-tab {
+	color: #78aeed;
 }

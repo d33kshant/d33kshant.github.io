@@ -21,3 +21,9 @@
 		justify-content: center;
 	}
 }
+
+.dark .main-tab {
+	background: #222;
+	color: white;
+	border-color: #333;
+}
