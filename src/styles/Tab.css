@@ -1,7 +1,7 @@
 .tab {
 	display: flex;
 	gap: 4px;
-	padding: 8px;
+	padding: 8px 0;
 	opacity: .5;
 	z-index: 5;
 	position: relative;
