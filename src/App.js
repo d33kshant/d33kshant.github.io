@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
+import Certificates from './components/Certificates'
 import Header from './components/Header'
+import Projects from './components/Projects'
+import Skills from './components/Skils'
 import Tab from './components/Tab'
 import TabBar from './components/TabBar'
+import TabContainer from './components/TabContainer'
 import './styles/App.css'
 
 const tabs = [ 
@@ -19,15 +23,17 @@ const tabs = [
 	}
 ]
 
+const tabComponents = [ <Projects/>, <Skills/>, <Certificates/> ]
+
 function App() {
 
 	const [currentTab, setCurrentTab] = useState(0)
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState('')
 
 	useEffect(() => {
 		const _theme = localStorage.getItem('theme')
 		if (_theme) setTheme(_theme)
-		document.body.classList = [_theme]
+		document.body.classList.toggle('dark', _theme!=='dark')
 	}, [])
 
 	const toggleTheme = () => {
@@ -35,7 +41,7 @@ function App() {
 			setTheme('dark')
 		} else setTheme('light')
 		localStorage.setItem('theme', theme)
-		document.body.classList = [theme]
+		document.body.classList.toggle('dark', theme!=='dark')
 	}
 
 	return (
@@ -47,6 +53,9 @@ function App() {
 				<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 			</button>
 		</TabBar>
+		<TabContainer>
+			{tabComponents[currentTab]}
+		</TabContainer>
 		</>
 	)
 }
