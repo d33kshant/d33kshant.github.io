@@ -6,7 +6,7 @@
 .enable-dark-mode {
 	margin-left: auto;
 	width: max-content;
-	padding: 8px;
+	padding: 8px 0;
 	background: none;
 	border: none;
 	font-family: inherit;

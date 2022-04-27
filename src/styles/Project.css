@@ -1,0 +1,50 @@
+.project-container {
+	position: relative;
+	box-sizing: border-box;
+	text-decoration: none;
+	color: black;
+	border-radius: 4px;
+	margin-bottom: 8px;
+}
+
+.project-container .content {
+	height: 100%;
+	width: 100%;
+}
+
+.project-thumb {
+	width: 100%;
+	height: 100px;
+	background: rgba(0, 0, 0, .2);
+	font-size: x-large;
+	color: white;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content h3 {
+	font-size: large;
+	margin: 4px 0;
+	margin-bottom: 2px;
+}
+
+.content p {
+	margin: 0;
+	font-size: 16px;
+}
+
+.dark .project-container {
+	box-shadow: none;
+	border: none;
+	color: white;
+}
+
+.dark .content p {
+	opacity: .6;
+}
+
+.dark .project-thumb {
+	background: #222;
+}
