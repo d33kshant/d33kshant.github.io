@@ -4,37 +4,37 @@
 			"title": "stream",
 			"description": "a simple media streaming server made with node and express.",
 			"source": "https://github.com/d33kshant/stream",
-			"icon": "📺"
+			"icon": "stream.svg"
 		},
 		{
 			"title": "react-chat",
 			"description": "realtime chat application made with react and firebase.",
 			"source": "https://github.com/d33kshant/stream",
-			"icon": "📧"
+			"icon": "chat.svg"
 		},
 		{
 			"title": "ecom-app",
 			"description": "e-com store like amazon made with mern stack.",
 			"source": "https://github.com/d33kshant/ecom-app",
-			"icon": "🛒"
+			"icon": "ecom.svg"
 		},
 		{
 			"title": "linklist",
 			"description": "linktree clone to create list all your social links.",
 			"source": "https://github.com/d33kshant/ecom-app",
-			"icon": "🔗"
+			"icon": "link.svg"
 		},
 		{
 			"title": "pinit",
 			"description": "an image sharing platform like piniterset.",
 			"source": "https://github.com/d33kshant/ecom-app",
-			"icon": "📌"
+			"icon": "pin.svg"
 		},
 		{
 			"title": "threaded",
 			"description": "4chan like thred based buletin made with mern stack.",
 			"source": "https://github.com/d33kshant/ecom-app",
-			"icon": "🧵"
+			"icon": "thread.svg"
 		}
 	],
 	"skills": {
