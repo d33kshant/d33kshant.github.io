@@ -5,7 +5,7 @@ const Project = ({title, description, source, icon}) => {
 		<a href={source} className="project-container">
 			<div className="content">
 				<div className="project-thumb">
-					{icon}
+					<img src={icon} alt={title} />
 				</div>
 				<h3>{title}</h3>
 				<p>{description}</p>
