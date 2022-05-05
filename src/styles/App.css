@@ -1,0 +1,26 @@
+.dark {
+	background: #111;
+	color: white;
+}
+
+.enable-dark-mode {
+	margin-left: auto;
+	width: max-content;
+	padding: 8px 0;
+	background: none;
+	border: none;
+	font-family: inherit;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	opacity: .5;
+}
+
+.dark .enable-dark-mode {
+	opacity: 1;
+}
+
+.dark .enable-dark-mode svg {
+	fill: #f8e45c;
+	stroke: #f8e45c;
+}
