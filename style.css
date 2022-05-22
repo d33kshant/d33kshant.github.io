@@ -14,6 +14,7 @@ main {
 	height: 100%;
 	padding: 16px;
 	box-sizing: border-box;
+	text-align: center;
 }
 
 main h2 {
@@ -21,10 +22,39 @@ main h2 {
 	font-family: 'JetBrains Mono', monospace;
 }
 
+main h2::before {
+	content: "{";
+	/* margin-right: 4px; */
+	color: purple;
+}
+
+main h2::after {
+	content: "}";
+	/* margin-right: 4px; */
+	color: purple;
+}
+
 main p {
 	margin: 8px 0;
 	font-size: medium;
 	max-width: 550px;
+	color: #444;
+}
+
+main p::before {
+	content: "/*";
+	display: inline-block;
+	margin-right: 4px;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: .85em;
+}
+
+main p::after {
+	font-size: .85em;
+	display: inline-block;
+	margin-left: 4px;
+	content: " */";
+	font-family: 'JetBrains Mono', monospace;
 }
 
 main img {
@@ -33,6 +63,7 @@ main img {
 
 main > div > span {
 	display: flex;
+	justify-content: center;
 	gap: 16px;
 }
 
@@ -42,6 +73,20 @@ div > span > a {
 	text-transform: uppercase; */
 	text-decoration: none;
 	color: blue;
+}
+
+.bi-asterisk {
+	fill: green;
+	animation: rotate linear infinite 16s;
+}
+
+@keyframes rotate {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
 }
 
 /* @media (prefers-color-scheme: dark) {
