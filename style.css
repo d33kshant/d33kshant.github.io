@@ -34,11 +34,15 @@ main h2::after {
 	color: purple;
 }
 
+main h2 span {
+	color: green;
+}
+
 main p {
 	margin: 8px 0;
 	font-size: medium;
 	max-width: 550px;
-	color: #444;
+	color: slategray;
 }
 
 main p::before {
