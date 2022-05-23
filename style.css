@@ -7,7 +7,7 @@ html, body {
 
 main {
 	display: flex;
-	/* flex-direction: column; */
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -15,27 +15,49 @@ main {
 	padding: 16px;
 	box-sizing: border-box;
 	text-align: center;
+	position: relative;
 }
 
 main h2 {
 	margin: 0;
+}
+
+main div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-header {
 	font-family: 'JetBrains Mono', monospace;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
-main h2::before {
+.header-title {
+	margin: 0;
+	width: 9ch;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: typing 3s steps(9);
+}
+
+.open-brec {
 	content: "{";
-	/* margin-right: 4px; */
+	width: 1ch;
+	font-family: inherit;
 	color: purple;
+	display: inline-block;
 }
 
-main h2::after {
+.close-brec {
 	content: "}";
-	/* margin-right: 4px; */
+	width: 1ch;
+	display: inline-block;
+	font-family: inherit;
 	color: purple;
-}
-
-main h2 span {
-	color: green;
 }
 
 main p {
@@ -65,23 +87,40 @@ main img {
 	border-radius: 50%;
 }
 
-main > div > span {
+.link-container {
+	margin-top: 8px;
 	display: flex;
 	justify-content: center;
 	gap: 16px;
 }
 
-div > span > a {
+a {
 	font-family: inherit;
-	/* font-family: 'JetBrains Mono', monospace;
-	text-transform: uppercase; */
 	text-decoration: none;
 	color: blue;
 }
 
-.bi-asterisk {
-	fill: green;
-	animation: rotate linear infinite 16s;
+.down-arrow {
+	position: absolute;
+	left: 50%;
+	bottom: 32px;
+	font-size: 24px;
+	/* font-family: 'JetBrains Mono', monospace; */
+}
+
+.section-container {
+	height: 100vh;
+	width: 100%;
+}
+
+.section-skills {
+	background: #222;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	gap: 16ch;
 }
 
 @keyframes rotate {
@@ -93,20 +132,14 @@ div > span > a {
 	}
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root {
-		color-scheme: dark;
+@keyframes typing {
+	0% {
+		width: 0
 	}
-
-	main > h2 {
-		color: #ccc;
+	50% {
+		width: 0;
 	}
-
-	main > div > p {
-		color: #aaa;
+	100% {
+		width: 9ch;
 	}
-
-	div > span > a {
-		color: lightskyblue;
-	}
-} */
+}
