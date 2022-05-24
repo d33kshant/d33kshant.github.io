@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Work+Sans&display=swap');
+
+@font-face {
+	font-family: 'SansFont';
+	src: url('sans.ttf');
+}
+
 html, body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'SansFont', sans-serif;
+	/* font-family: 'Work Sans', sans-serif; */
 }
 
 main {
@@ -22,10 +30,8 @@ main h2 {
 	margin: 0;
 }
 
-main div {
+.header-container {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -41,30 +47,32 @@ main div {
 	width: 9ch;
 	white-space: nowrap;
 	overflow: hidden;
-	animation: typing 3s steps(9);
-}
-
-.open-brec {
-	content: "{";
-	width: 1ch;
-	font-family: inherit;
-	color: purple;
+	animation: typing 2s steps(8);
 	display: inline-block;
+	margin: 0 8px;
 }
 
-.close-brec {
+
+.header-container::after, .header-container::before {
 	content: "}";
-	width: 1ch;
+	width: max-content;
 	display: inline-block;
-	font-family: inherit;
+	font-size: 1.5em;
+	font-family: 'JetBrains Mono', monospace;
 	color: purple;
+	font-weight: bold;
+	white-space: pre;
+}
+
+.header-container::before {
+	content: "{";
 }
 
 main p {
 	margin: 8px 0;
-	font-size: medium;
-	max-width: 550px;
-	color: slategray;
+	font-size: 18px;
+	max-width: 640px;
+	color: #444;
 }
 
 main p::before {
@@ -83,15 +91,13 @@ main p::after {
 	font-family: 'JetBrains Mono', monospace;
 }
 
-main img {
-	border-radius: 50%;
-}
-
 .link-container {
 	margin-top: 8px;
+	margin-bottom: 5em;
 	display: flex;
 	justify-content: center;
 	gap: 16px;
+	font-size: 18px;
 }
 
 a {
@@ -100,12 +106,14 @@ a {
 	color: blue;
 }
 
+/* a:hover {
+	color: #34a245;
+} */
+
 .down-arrow {
 	position: absolute;
 	left: 50%;
 	bottom: 32px;
-	font-size: 24px;
-	/* font-family: 'JetBrains Mono', monospace; */
 }
 
 .section-container {
@@ -134,10 +142,10 @@ a {
 
 @keyframes typing {
 	0% {
-		width: 0
+		width: 1ch;
 	}
 	50% {
-		width: 0;
+		width: 1ch;
 	}
 	100% {
 		width: 9ch;
