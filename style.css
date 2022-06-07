@@ -1,153 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Work+Sans&display=swap');
-
-@font-face {
-	font-family: 'SansFont';
-	src: url('sans.ttf');
-}
-
 html, body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	font-family: 'SansFont', sans-serif;
-	/* font-family: 'Work Sans', sans-serif; */
 }
 
-main {
+.container {
+	height: 100%;
+	max-height: 100vh;
+	width: 100%;
+}
+
+.section-heading {
+	font-size: 24px;
+	font-family: 'Barlow';
+	font-weight: 500;
+}
+
+.section-subtitle {
+	font-family: 'Inter';
+	font-size: 16px;
+}
+
+.subtitle-link {
+	color: white;
+	text-decoration: none;
+}
+
+.subtitle-link::after {
+	content: "↗";
+	font-family: 'Inter';
+}
+
+.section-main {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 100%;
+	text-align: center;
 	padding: 16px;
 	box-sizing: border-box;
-	text-align: center;
-	position: relative;
 }
 
-main h2 {
+.main-title {
+	font-family: 'Barlow';
+	font-weight: 500;
+	font-size: 24px;
 	margin: 0;
 }
 
-.header-container {
-	display: flex;
-	align-items: center;
-}
-
-.main-header {
-	font-family: 'JetBrains Mono', monospace;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-}
-
-.header-title {
-	margin: 0;
-	width: 9ch;
-	white-space: nowrap;
-	overflow: hidden;
-	animation: typing 2s steps(8);
-	display: inline-block;
-	margin: 0 8px;
-}
-
-
-.header-container::after, .header-container::before {
-	content: "}";
-	width: max-content;
-	display: inline-block;
-	font-size: 1.5em;
-	font-family: 'JetBrains Mono', monospace;
-	color: purple;
-	font-weight: bold;
-	white-space: pre;
-}
-
-.header-container::before {
-	content: "{";
-}
-
-main p {
+.main-content {
+	font-family: 'Inter';
+	font-size: 16px;
+	max-width: 750px;
 	margin: 8px 0;
-	font-size: 18px;
-	max-width: 640px;
-	color: #444;
 }
 
-main p::before {
-	content: "/*";
-	display: inline-block;
-	margin-right: 4px;
-	font-family: 'JetBrains Mono', monospace;
-	font-size: .85em;
-}
-
-main p::after {
-	font-size: .85em;
-	display: inline-block;
-	margin-left: 4px;
-	content: " */";
-	font-family: 'JetBrains Mono', monospace;
-}
-
-.link-container {
-	margin-top: 8px;
-	margin-bottom: 5em;
+.main-links {
 	display: flex;
 	justify-content: center;
+	margin-top: 16px;
 	gap: 16px;
+}
+
+.main-link {
+	font-family: 'Barlow';
+	text-transform: uppercase;
+	color: #3B89E3;
+	text-decoration: none;
+	font-weight: 500;
 	font-size: 18px;
 }
 
-a {
-	font-family: inherit;
-	text-decoration: none;
-	color: blue;
+.main-link::after {
+	content: "↗";
+	font-family: 'Inter';
 }
 
-/* a:hover {
-	color: #34a245;
-} */
-
-.down-arrow {
-	position: absolute;
-	left: 50%;
-	bottom: 32px;
+.main-link::after:hover {
+	color: red;
 }
 
-.section-container {
-	height: 100vh;
-	width: 100%;
+.section-stats {
+	background: #3145B8;
+	color: white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 10vh;
 }
 
-.section-skills {
-	background: #222;
-	overflow: hidden;
+.stats-container {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	color: white;
-	gap: 16ch;
+	box-sizing: border-box;
+	border: 1px solid rgba(255, 255, 255, 0.09);
+	border-left: none;
+	border-right: none;
+	width: 100%;
+	margin-bottom: 10vh;
+	border-collapse: collapse;
 }
 
-@keyframes rotate {
-	0% {
-		transform: translate(-50%, -50%) rotate(0deg);
-	}
-	100% {
-		transform: translate(-50%, -50%) rotate(360deg);
-	}
+.stats-row {
+	display: flex;
+	box-sizing: border-box;
 }
 
-@keyframes typing {
-	0% {
-		width: 1ch;
+.stats-box {
+	text-align: center;
+	padding: 16px 4vw;
+	box-sizing: border-box;
+	border-right: 1px solid rgba(255, 255, 255, 0.09);
+	border-collapse: collapse;
+}
+
+.stats-value {
+	font-family: 'Barlow';
+	font-weight: normal;
+	font-size: 4em;
+	margin: 0;
+}
+
+.stats-title {
+	font-family: 'Inter';
+	opacity: .5;
+}
+
+.stats-box:first-child {
+	border-left: none;
+}
+
+.stats-box:last-child {
+	border-right: none;
+}
+
+.stats-row:first-of-type {
+	border-right: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+@media screen and (max-width: 640px) {
+	.stats-container {
+		flex-direction: column;
 	}
-	50% {
-		width: 1ch;
+
+	.stats-row {
+		width: 100%;
 	}
-	100% {
-		width: 9ch;
+
+	.stats-box {
+		flex: 1;
+	}
+
+	.stats-row:last-of-type {
+		border-top: 1px solid rgba(255, 255, 255, 0.09);
 	}
 }
