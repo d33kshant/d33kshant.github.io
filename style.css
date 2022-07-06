@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+html, body, .main-container {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background: white;
+	font-family: 'Segoe UI', 'Inter', sans-serif;
+}
+
+.main-container, .section-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 16px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.main-title {
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-align: center;
+	font-family: 'Space Grotesk';
+	margin: 0;
+}
+
+.main-subtitle {
+	margin: 0;
+	margin-top: .5em;
+	width: 100%;
+	max-width: 1000px;
+	font-size: 1.5em;
+	font-weight: normal;
+	text-align: center;
+	font-family: 'Inter';
+	color: gray;
+	margin-bottom: 2em;
+}
+
+a {
+	text-decoration: none;
+	color: #0000EE;
+}
+
+.footer-container {
+	position: relative;
+	max-width: 100%;
+	height: 10vh;
+	overflow-y: hidden;
+}
+
+.footer-image {
+	position: absolute;
+	bottom: 0;
+	transform: translateY(50%);
+	width: 100%;
+}
+
+@media (max-width: 600px) {
+	.main-subtitle, .main-title {
+		text-align: left;
+	}
+
+	.desktop-break {
+		display: none;
+	}
+}
