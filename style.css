@@ -4,7 +4,6 @@ html, body, .main-container {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	background: white;
 	font-family: 'Inter', sans-serif;
 }
 
@@ -72,7 +71,7 @@ a {
 	width: 100%;
 }
 
-.skills-row {
+.skills-row, .heat-map-container {
 	width: 100%;
 	max-width: 1000px;
 	overflow-x: hidden;
@@ -109,6 +108,16 @@ a {
 	height: 2em;
 }
 
+.heat-map-image {
+	width: 100%;
+	min-height: 104px;
+	object-fit: cover;
+}
+
+.heat-map-container {
+	border: none;
+}
+
 @media (max-width: 600px) {
 
 	.main-container {
@@ -138,4 +147,19 @@ a {
 	0% { bottom: 48px; }
 	50% { bottom: 16px; }
 	100% { bottom: 48px; }
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #121212 ;
+		color: white;
+	}
+
+	.main-container, .section-container, .skills-row {
+		border-color: #333;
+	}
+
+	a {
+		color: #82a9e8;
+	}
 }
