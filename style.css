@@ -41,8 +41,16 @@ html, body, .main-container {
 	color: gray;
 }
 
-.section-subtitle {
+.section-subtitle, .main-subtitle:last-child {
 	margin-bottom: 2em;
+}
+
+.scroll-down-indicator {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 2rem;
+	animation: scroll-indication infinite ease 1.5s;
 }
 
 a {
@@ -124,4 +132,10 @@ a {
 @keyframes scroll-right {
 	0% { transform: translateX(-2353.2px); }
 	100% { transform: translateX(-497px); }
+}
+
+@keyframes scroll-indication {
+	0% { bottom: 48px; }
+	50% { bottom: 16px; }
+	100% { bottom: 48px; }
 }
