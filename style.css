@@ -118,6 +118,18 @@ a {
 	border: none;
 }
 
+.toggle-theme {
+	border: none;
+	background: none;
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	z-index: 5;
+	cursor: pointer;
+}
+
 @media (max-width: 600px) {
 
 	.main-container {
@@ -149,17 +161,17 @@ a {
 	100% { bottom: 48px; }
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background: #121212 ;
-		color: white;
-	}
+.dark body {
+	background: #121212 ;
+	color: white;
+}
 
-	.main-container, .section-container, .skills-row {
-		border-color: #333;
-	}
+.dark .main-container, 
+.dark .section-container,
+.dark .skills-row {
+	border-color: #333;
+}
 
-	a {
-		color: #82a9e8;
-	}
+.dark a {
+	color: #82a9e8;
 }
