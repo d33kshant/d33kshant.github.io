@@ -1,3 +1,5 @@
+import better
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -23,5 +25,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'env']
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'better'
+html_theme_path = [better.better_theme_path]
 html_static_path = ['_static']
