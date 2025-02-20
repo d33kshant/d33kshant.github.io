@@ -28,3 +28,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'env']
 html_theme = 'better'
 html_theme_path = [better.better_theme_path]
 html_static_path = ['_static']
+html_short_title = "Home"
+html_title = project
+html_show_sphinx = False
+html_show_copyright = True
