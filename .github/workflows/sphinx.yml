@@ -31,7 +31,11 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
+      - name: download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: docs
       - name: deploy to gh-pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ needs.build.outputs.artifact_name }}
+          path: docs
