@@ -2,6 +2,8 @@ site_name: d33kshant
 site_url: https://d33kshant.github.io/
 theme:
   name: material
+  icon:
+    logo: material/alpha-d-circle
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
