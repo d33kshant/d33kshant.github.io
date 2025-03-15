@@ -1,3 +1,0 @@
-myst-parser==4.0.1
-sphinx==8.2.0
-sphinx-better-theme==0.1.5
