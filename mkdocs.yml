@@ -1,10 +1,12 @@
 site_name: d33kshant
 site_url: https://d33kshant.github.io/
 copyright: Copyright &copy; 2025, Deekshant Yadav
+# Site navigation in sidebar
 nav:
   - index.md
   - blog/index.md
   - about.md
+# Material theme configuration
 theme:
   name: material
   icon:
@@ -30,6 +32,7 @@ theme:
   features:
     - content.code.copy
     - content.footnote.tooltips
+# Additional plugins
 plugins:
   - blog
   - meta
@@ -53,6 +56,7 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
+# Extra configuration
 extra:
   generator: false
   social:
@@ -62,6 +66,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/deekshantyadav
       name: d33kshant on LinkedIn
+# Extra JavaScript files
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
