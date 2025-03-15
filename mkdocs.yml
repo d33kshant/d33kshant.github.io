@@ -30,7 +30,10 @@ plugins:
   - search
 # Python markdown extensions
 markdown_extensions:
-  - pymdownx.arithmatex
+  - tables
+  - footnotes
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.b64
   - pymdownx.blocks.caption
   - pymdownx.caret
