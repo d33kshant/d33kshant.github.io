@@ -20,6 +20,9 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+  features:
+    - content.code.copy
+    - content.footnote.tooltips
 # Python markdown extensions
 markdown_extensions:
   - pymdownx.arithmatex
