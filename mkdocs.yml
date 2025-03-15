@@ -1,1 +1,4 @@
-site_name: My Docs
+site_name: d33kshant
+site_url: https://d33kshant.github.io/
+theme:
+  name: material
