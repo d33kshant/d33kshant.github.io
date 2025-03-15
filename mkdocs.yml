@@ -1,5 +1,9 @@
 site_name: d33kshant
 site_url: https://d33kshant.github.io/
+nav:
+  - index.md
+  - blog/index.md
+  - about.md
 theme:
   name: material
   icon:
