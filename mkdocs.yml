@@ -23,6 +23,11 @@ theme:
   features:
     - content.code.copy
     - content.footnote.tooltips
+plugins:
+  - blog
+  - meta
+  - social
+  - search
 # Python markdown extensions
 markdown_extensions:
   - pymdownx.arithmatex
