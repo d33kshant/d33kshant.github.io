@@ -20,3 +20,18 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+# Python markdown extensions
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.b64
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.highlight
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
