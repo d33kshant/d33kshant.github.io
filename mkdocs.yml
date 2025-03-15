@@ -32,6 +32,7 @@ theme:
   features:
     - content.code.copy
     - content.footnote.tooltips
+    - toc.follow
 # Additional plugins
 plugins:
   - blog
