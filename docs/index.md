@@ -1,17 +1,26 @@
-# Welcome to MkDocs
+---
+title: Home
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# d33kshant
 
-## Commands
+<div class="grid cards" markdown>
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+-   :material-text-box:{ .lg .middle } __Blogs__
 
-## Project layout
+    ---
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    I do not write a lot but do share my learnings and likes to teach what learned
+
+    [Read the blogs :octicons-arrow-right-24:](blog/index.md)
+
+-   :material-drawing-box:{ .lg .middle } __Projects__
+
+    ---
+
+    I've worked on a variety of projects, look at some of the projects that I have worked on
+
+    [Look at projects :octicons-arrow-right-24:](projects.md)
+
+
+</div>
