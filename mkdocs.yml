@@ -4,6 +4,7 @@ copyright: copyright &copy; 2025, deekshant
 # Material theme configuration
 theme:
   name: material
+  custom_dir: overrides
   icon:
     logo: material/alpha-d-circle
   palette:
