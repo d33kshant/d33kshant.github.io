@@ -36,7 +36,7 @@ Some common supervised learning algorithms include:
 
 * **Linear Regression**: This algorithm helps us predict continuous values, like house prices based on features such as square footage, number of bedrooms, and location. It's like drawing a straight line through data points that best fits the relationship between inputs and outputs.
 
-* **Logistic Regression:** Despite its name, this is actually a classification algorithm, not a regression algorithm! It predicts binary outcomes like "yes/no" or "spam/not spam." Think of it as answering questions like "Will this customer buy our product?" or "Is this email spam?" It works by calculating the probability that an input belongs to a particular class and making a decision based on that probability. It's especially popular for its simplicity and interpretability.
+* **Logistic Regression:** Despite its name, this is actually a classification algorithm, not a regression algorithm! It predicts binary outcomes like "yes/no" or "spam/not spam." Think of it as answering questions like "Will this customer buy our product?" or "Is this email spam?" It works by calculating the probability that an input belongs to a particular class and making a decision based on that probability. It's especially popular for its simplicity and interpretability. Find a implementation from scartch [here](implementing-logistic-regression-from-scratch.md).
 
 * **Decision Trees**: These algorithms make decisions by creating a tree-like model of decisions and their possible consequences. It's similar to a flowchart where each node represents a feature, each branch represents a decision rule, and each leaf represents an outcome.
 
