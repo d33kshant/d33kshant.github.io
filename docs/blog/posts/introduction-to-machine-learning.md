@@ -52,7 +52,7 @@ Some common unsupervised learning algorithms include:
 
 * [**K-means Clustering**](implementing-k-means-clustering-from-scratch.md): This algorithm groups similar data points together. It's like sorting marbles by color without being told what the colors are – you simply group similar-looking marbles together.
 
-* **Principal Component Analysis (PCA)**: This technique reduces the dimensionality of data while preserving as much information as possible. It's like summarizing a long story in a few key points – you lose some details but keep the essential information.
+* [**Principal Component Analysis (PCA)**](implementing-principal-component-analysis-pca-from-scratch.md): This technique reduces the dimensionality of data while preserving as much information as possible. It's like summarizing a long story in a few key points – you lose some details but keep the essential information.
 
 * **Hierarchical Clustering**: This creates a tree of clusters, where similar data points are grouped together at different levels. It's like organizing animals into groups – mammals, birds, reptiles – and then further dividing each group into more specific categories.
 
