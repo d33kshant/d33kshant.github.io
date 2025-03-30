@@ -50,7 +50,7 @@ Think about how you might sort your laundry without someone telling you how. You
 
 Some common unsupervised learning algorithms include:
 
-* **K-means Clustering**: This algorithm groups similar data points together. It's like sorting marbles by color without being told what the colors are – you simply group similar-looking marbles together.
+* [**K-means Clustering**](implementing-k-means-clustering-from-scratch.md): This algorithm groups similar data points together. It's like sorting marbles by color without being told what the colors are – you simply group similar-looking marbles together.
 
 * **Principal Component Analysis (PCA)**: This technique reduces the dimensionality of data while preserving as much information as possible. It's like summarizing a long story in a few key points – you lose some details but keep the essential information.
 
