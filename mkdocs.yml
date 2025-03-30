@@ -1,6 +1,6 @@
 site_name: d33kshant
 site_url: https://d33kshant.github.io/
-copyright: copyright &copy; 2025, deekshant
+copyright: Copyright &copy; 2025, Deekshant Yadav
 # Material theme configuration
 theme:
   name: material
