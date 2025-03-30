@@ -33,6 +33,7 @@ theme:
 plugins:
   - blog:
       post_url_format: "{slug}"
+      pagination_per_page: 5
   - meta
   - social
   - search
