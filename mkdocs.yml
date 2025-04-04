@@ -28,6 +28,7 @@ theme:
   features:
     - content.code.copy
     - content.footnote.tooltips
+    - navigation.expand
     - toc.follow
 # Additional plugins
 plugins:
@@ -40,6 +41,9 @@ plugins:
   - tags
 # Python markdown extensions
 markdown_extensions:
+  - toc:
+      permalink: true
+      title: On this page
   - attr_list
   - footnotes
   - md_in_html
