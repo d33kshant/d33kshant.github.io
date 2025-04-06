@@ -3,7 +3,7 @@ authors:
   - d33kshant
 categories:
   - Mini Projects
-date: 2024-09-05
+date: 2024-06-05
 description: >-
     This mini project demonstrates how to make a Hidden Markov Model (HMM) which uses probability based language modeling to create a very minimal language model which can generate new sentances.
 ---
@@ -97,5 +97,7 @@ hmm = create_hmm(lyrics)
 print(generate_sentence(hmm, start_word="The"))
 ```
 <div class="result" markdown>
+<pre>
 The answer, my friend, is blowin' in the sea? Yes,
+</pre>
 </div>
