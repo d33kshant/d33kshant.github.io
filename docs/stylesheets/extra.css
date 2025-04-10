@@ -1,3 +1,16 @@
+.md-typeset .grid.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.md-typeset img {
+  border-radius: .1rem;
+}
+
+.md-typeset .middle {
+  margin-bottom: .1rem;
+}
+
 .md-typeset .result {
   font-size: .85em;
   overflow-x: auto;
