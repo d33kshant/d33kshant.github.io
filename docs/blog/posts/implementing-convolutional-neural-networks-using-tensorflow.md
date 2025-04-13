@@ -9,7 +9,7 @@ description: >-
   Convolutional Neural Networks (CNNs) are a class of deep learning models that excel at working with image data. Instead of processing each pixel independently (like in a fully connected neural network), CNNs use filters (or kernels) to scan across the image, capturing spatial hierarchies and local patterns like edges, textures, and shapes.
 ---
 
-# Implementing CNN using Tensorflow
+# Implementing Convolutional Neural Networks using Tensorflow
 
 Convolutional Neural Networks (CNNs) are a class of deep learning models that excel at working with image data. Instead of processing each pixel independently (like in a fully connected neural network), CNNs use filters (or kernels) to scan across the image, capturing spatial hierarchies and local patterns like edges, textures, and shapes.
 
@@ -168,7 +168,7 @@ plt.show()
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f'Test accuracy: {test_acc:.4f}')
 ```
-<div class="result" markdown>
+<div class="result" style="overflow-x: auto;" markdown>
 <pre><span style="font-weight: bold;">313/313</span><span> </span><span style="color: var(--ansi-green);">━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="font-weight: bold;">1s</span><span> 2ms/step - accuracy: 0.7010 - loss: 0.9037
 Test accuracy: 0.7029
 </span></pre>
