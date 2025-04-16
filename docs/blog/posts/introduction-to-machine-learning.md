@@ -64,7 +64,7 @@ Imagine teaching a dog new tricks. You give it treats when it does something rig
 
 Some common reinforcement learning algorithms include:
 
-* **Q-Learning**: This algorithm learns the value of taking a particular action in a particular state. It's like learning which route to take to work based on traffic conditions – you learn which roads are best under different circumstances.
+* [**Q-Learning**](implementing-q-learning-from-scratch.md): This algorithm learns the value of taking a particular action in a particular state. It's like learning which route to take to work based on traffic conditions – you learn which roads are best under different circumstances.
 
 * **Deep Q Networks (DQN)**: This combines Q-learning with neural networks to handle more complex scenarios. It's what powers many game-playing AI systems that can beat human champions at chess, Go, and video games.
 
