@@ -16,7 +16,7 @@ Decision trees are powerful models that simulate human decision-making by breaki
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1z8F_i4kNYndX4swg8C92hWw9GOPUsnx_)
 
-???+ ai-summary "AI Summary"
+???+ abstract "AI Summary"
     This blog offers a detailed exploration of decision trees, focusing on their mathematical foundations and practical applications. It explains concepts like Gini impurity, information gain, and data splitting, providing a clear understanding of how decision trees make decisions. Through a step-by-step approach, readers gain insights into building and evaluating decision trees. The blog concludes with a comparison to a standard implementation, reinforcing the learning experience.
 
 ## What is Decision Tree
