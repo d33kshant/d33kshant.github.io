@@ -159,7 +159,7 @@ plt.show()
 ```
 <div class="result" markdown>
 
-![CNN Training History](images/cnn-training-history.png){ width="400" }
+![CNN Training History](images/cnn-training-history.png)
 
 </div>
 
@@ -199,7 +199,7 @@ plt.axis('off')
 plt.show()
 ```
 <div class="result" markdown>
-![CNN Sample Prediction](images/cnn-sample-prediction.png){ width="300" }
+![CNN Sample Prediction](images/cnn-sample-prediction.png)
 </div>
 
 ## Conclusion

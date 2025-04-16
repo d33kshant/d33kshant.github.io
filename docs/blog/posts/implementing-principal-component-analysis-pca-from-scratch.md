@@ -125,7 +125,7 @@ plt.grid()
 plt.show()
 ```
 <div class="result" markdown>
-![PCA Output](images/pca.png){ width="400" }
+![PCA Output](images/pca.png)
 </div>
 
 ## Implementing PCA Using Scikit-Learn
@@ -146,7 +146,7 @@ plt.grid()
 plt.show()
 ```
 <div class="result" markdown>
-![Scikit PCA Output](images/pca-scikit.png){ width="400" }
+![Scikit PCA Output](images/pca-scikit.png)
 </div>
 
 ## Conclusion

@@ -121,7 +121,7 @@ plt.grid()
 plt.show()
 ```
 <div class="result" markdown>
-![Logistic Output](images/logistic-regression-output.png){ width="400" }
+![Logistic Output](images/logistic-regression-output.png)
 </div>
 
 
