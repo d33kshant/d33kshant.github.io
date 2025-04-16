@@ -40,7 +40,7 @@ Some common supervised learning algorithms include:
 
 * [**Decision Trees**](implementing-decision-tree-from-scratch.md): These algorithms make decisions by creating a tree-like model of decisions and their possible consequences. It's similar to a flowchart where each node represents a feature, each branch represents a decision rule, and each leaf represents an outcome.
 
-* **Support Vector Machines (SVMs)**: These algorithms find the best boundary that separates different classes of data. Imagine drawing a line (or a hyperplane in higher dimensions) that maximizes the distance between the closest points of different classes.
+* [**Support Vector Machines (SVMs)**](implementing-svm-from-scratch.md): These algorithms find the best boundary that separates different classes of data. Imagine drawing a line (or a hyperplane in higher dimensions) that maximizes the distance between the closest points of different classes.
 
 ### 2. Unsupervised Learning
 
