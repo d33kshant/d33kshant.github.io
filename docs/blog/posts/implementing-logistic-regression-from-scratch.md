@@ -17,7 +17,7 @@ Let's dive into logistic regression, a fundamental classification algorithm. We'
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1UzACrMpQtV3irBxH2E27vz5Dw9nNt1AG)
 
-???+ ai-summary "AI Summary"
+???+ abstract "AI Summary"
     The document provides a comprehensive tutorial on implementing logistic regression from scratch, a fundamental classification algorithm used for binary prediction tasks. It explains the mathematical foundations of logistic regression, including the sigmoid function and decision boundary, and demonstrates a step-by-step implementation using NumPy on the Breast Cancer dataset. The tutorial covers data preparation, model training, prediction, and evaluation, comparing the manual implementation with Scikit-Learn's approach and achieving high accuracy in classifying cancer data.
 
 ## What is Logistic Regression?

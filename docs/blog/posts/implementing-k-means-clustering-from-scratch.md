@@ -16,7 +16,7 @@ K-Means clustering is one of the simplest and most effective unsupervised machin
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1NbffALDL_jOCxpsEQTvxoBAqcKfaHP9Z)
 
-???+ ai-summary "AI Summary"
+???+ abstract "AI Summary"
     This blog provides a comprehensive tutorial on K-Means clustering, an unsupervised machine learning algorithm used for grouping data into clusters. It explains the algorithm's steps, including initialization, assignment, and update phases, and demonstrates a from-scratch implementation using NumPy and Pandas on the Iris dataset. The tutorial covers both manual implementation and Scikit-Learn's approach, showcasing how the algorithm works through code, mathematical formulas, and visualization of clustering results.
 
 In this blog, we'll break down the concept of K-Means clustering, implement it from scratch using NumPy and Pandas, and apply it to the famous Iris dataset. We'll follow a procedural, function-based approach, just like you would in a Jupyter notebook. Finally, we'll see how to implement the same using Scikit-Learn.

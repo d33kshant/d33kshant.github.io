@@ -16,7 +16,7 @@ Principal Component Analysis (PCA) is a widely used technique for reducing the d
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MHGK5qoNfMNRH-5NbBzCYxdCTAhU1szs)
 
-???+ ai-summary "AI Summary"
+???+ abstract "AI Summary"
     This document explains Principal Component Analysis (PCA), a dimensionality reduction technique that transforms correlated variables into a smaller set of uncorrelated principal components. It provides a step-by-step implementation from scratch using NumPy and Pandas on the Iris dataset, covering data standardization, covariance matrix computation, eigenvalue/eigenvector calculation, and data projection. The tutorial includes visualizations of the transformed data, compares the manual implementation with Scikit-Learn's approach, and emphasizes PCA's value for feature selection, noise reduction, and data visualization in machine learning workflows.
 
 PCA is useful in scenarios where we have high-dimensional data and want to reduce complexity, remove noise, and visualize patterns more easily. Some common applications include image compression, feature extraction, and speeding up machine learning models.

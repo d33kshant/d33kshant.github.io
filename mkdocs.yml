@@ -7,6 +7,8 @@ theme:
   custom_dir: overrides
   icon:
     logo: material/alpha-d-circle
+    admonition:
+      abstract: material/asterisk
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"

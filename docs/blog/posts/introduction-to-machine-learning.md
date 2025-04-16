@@ -15,7 +15,7 @@ Have you ever wondered how Netflix knows exactly what show you might want to wat
 
 <!-- more -->
 
-???+ ai-summary "AI Summary"
+???+ abstract "AI Summary"
     Machine learning is a field where computers learn from data rather than following explicit programming. The text outlines three main types: supervised learning (using labeled examples), unsupervised learning (finding patterns in unlabeled data), and reinforcement learning (learning through rewards and penalties). It explains various algorithms within each type and highlights how machine learning is used in everyday applications like recommendation systems, spam filters, and facial recognition.
 
 ## What is Machine Learning?

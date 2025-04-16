@@ -50,7 +50,7 @@ y_train = tf.keras.utils.to_categorical(y_train, 10)
 y_test = tf.keras.utils.to_categorical(y_test, 10)
 ```
 <div class="result" style="overflow-x: auto;" markdown>
-<pre style="font-size: .85em;">Downloading data from <a rel="nofollow" target="_blank" href="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz">https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz</a>
+<pre>Downloading data from <a rel="nofollow" target="_blank" href="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz">https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz</a>
 <span style="font-weight: bold;">170498071/170498071</span><span> </span><span style="color: var(--ansi-green);">━━━━━━━━━━━━━━━━━━━━</span><span> </span><span style="font-weight: bold;">3s</span><span> 0us/step
 </span></pre>
 </div>
