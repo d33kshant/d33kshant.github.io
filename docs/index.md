@@ -40,15 +40,19 @@ Data Science Intern
 
 <div markdown style="display: flex; gap: .5rem; justify-content: center;">
 
-[![Gmail](https://img.shields.io/badge/Contact-D14836?logo=gmail&logoColor=white)](mailto:d33kshant@gmail.com)
+[ :material-linkedin:{ .middle .lg } Connect](https://linkedin.com/in/deekshantyadav){ .md-button .md-button--primary target="_blank" }
 
-[![LinkedIn Learning](https://custom-icon-badges.demolab.com/badge/Connect-0A66C2?logo=linkedin-white&logoColor=fff)](https://linkedin.com/in/deekshantyadav){ target="_blank" }
+[ :material-email:{ .middle .lg } Contact](mailto:d33kshant@gmail.com){ .md-button }
+
+<!-- [![Gmail](https://img.shields.io/badge/Contact-D14836?logo=gmail&logoColor=white)](mailto:d33kshant@gmail.com)
+
+[![LinkedIn Learning](https://custom-icon-badges.demolab.com/badge/Connect-0A66C2?logo=linkedin-white&logoColor=fff)](https://linkedin.com/in/deekshantyadav){ target="_blank" } -->
 
 </div>
 
----
+# d33kshant
 
-hey, there! I am deekshant, a data science intern and a master's student in artificial intelligence. I have a background in computer science and past experience as a full-stack web developer, mainly in backend. I enjoy working with Python, AI-ML and open-source projects. I also like writing about my experiences and sharing what I learn.
+Hey, there! I am Deekshant, a data science intern and a master's student in artificial intelligence. I have a background in computer science and past experience as a full-stack web developer, mainly in backend. I enjoy working with Python, AI-ML and open-source projects. I also like writing about my experiences and sharing what I learn.
 
 
 ## Blogs
@@ -63,46 +67,72 @@ I do not write alot but often share my learning, opinions or experience time to 
 
     ---
 
+    <span class="text-description">
     Have you ever wondered how Netflix knows exactly what show you might want to watch next? Or how your email automatically filters spam messages? Or maybe how your phone recognizes your face? All of these technological wonders are powered by machine learning.
+    </span>
 
--   :material-text-box:{ .lg .middle } &nbsp; [HMM A Minimal Language Model](blog/posts/hmm-a-minimal-language-model.md)
+-   :material-text-box:{ .lg .middle } &nbsp; [Implementing Convolutional Neural Networks using Tensorflow](blog/posts/implementing-convolutional-neural-networks-using-tensorflow.md)
     
     ---
 
-    This mini project demonstrates how to make a Hidden Markov Model (HMM) which uses probability based language modeling to create a very minimal language model which can generate new sentances.
+    <span class="text-description">
+    Convolutional Neural Networks (CNNs) are a class of deep learning models that excel at working with image data. Instead of processing each pixel independently (like in a fully connected neural network), CNNs use filters (or kernels) to scan across the image, capturing spatial hierarchies and local patterns like edges, textures, and shapes.
+    </span>
 
--   :material-text-box:{ .lg .middle } &nbsp; [Stock Price Prediction with LSTM](blog/posts/stock-price-prediction-with-lstm.md)
+-   :material-text-box:{ .lg .middle } &nbsp; [Implementing Principal Component Analysis (PCA) from Scratch](blog/posts/implementing-principal-component-analysis-pca-from-scratch.md)
     
     ---
     
-    This mini project demonstrates how to use a Long Short-Term Memory (LSTM) neural network to predict stock prices based on historical data.
+    <span class="text-description">
+    Principal Component Analysis (PCA) is a widely used technique for reducing the dimensionality of datasets while retaining the most important information. It does this by transforming correlated variables into a smaller set of uncorrelated variables called principal components.
+    <span>
 
 </div>
 
 [Read More](blog/index.md)
 
----
+
 
 ## Projects
 
-I prefer project based learning thats why I always try to apply my learning on small or big projects. Some projects are also available as blog as mini project or part of tutorial
+I prefer project based learning thats why I always try to apply my learning on small or big projects. Over the years I've worked on many projects related to Web, AI and Open Source.
 
 ### Pinned Projects
 
 <div class="grid cards" markdown>
 
--   :material-drawing-box:{ .lg .middle } &nbsp; [BookStore](https://github.com/d33kshant/bookstore)
+-   :material-chart-box:{ .lg .middle } &nbsp; Stock Price Prediction with LSTM
+
+    ---
+    
+    A Long Short-Term Memory (LSTM) neural network to predict stock prices
+
+    [Open In Google Colab](https://colab.research.google.com/drive/1bpPZ1RGcePPlbzrtTKpz4GPmTAGo9zpP?usp=sharing){ target="_blank" }
+
+-   :material-alpha-a-box:{ .lg .middle } &nbsp; HMM A Minimal Language Model
 
     ---
 
-    An e-commerce platform to by books and get recommendation for new readings.
+    Probability based language modeling to create a very minimal language model
 
--   :material-drawing-box:{ .lg .middle } &nbsp; [HackSafe](https://github.com/d33kshant/bookstore)
+    [View](https://hmm-i86r.onrender.com/){ target="_blank" } &nbsp;&nbsp; [Open In Google Colab](https://colab.research.google.com/drive/1Y9I-IkZ3Q-dykvCpXLqcIoLoXMuwKkdf?usp=sharing){ target="_blank" }
+
+-   :material-web-box:{ .lg .middle } &nbsp; Store w/ Recommendation System
 
     ---
 
-    An Ed-Tech platform with rewards, articles, videos and quizzes.
+    An online commerece platform with content based recommendation system
+
+    [View](https://bookstore-three-psi.vercel.app/){ target="_blank" } &nbsp;&nbsp; [Open In GitHub](https://github.com/d33kshant/bookstore){ target="_blank" }
+
+-   :material-drawing-box:{ .lg .middle } &nbsp; Snake Game Bot
+
+    ---
+
+    A bot that plays classic snake game with reinforcement learning
+
+    [Read](blog/posts/implementing-q-learning-from-scratch.md) &nbsp;&nbsp; [Open In Google Colab](https://colab.research.google.com/drive/1Le3CKVlJ7HOvXjaKSijIqpr9Mb40X8kQ?usp=sharing){ target="_blank" }
 
 </div>
 
-[Explore More](https://github.com/d33kshant?tab=repositories)
+[Explore More](https://github.com/d33kshant?tab=repositories){ target="_blank" }
