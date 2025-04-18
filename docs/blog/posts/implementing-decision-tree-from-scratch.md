@@ -56,13 +56,67 @@ The core idea behind decision trees is to minimize impurity when making splits. 
 ### 1. Import Libraries and Load the Dataset
 
 ```python
-import numpy as np
-import pandas as pd
-from sklearn import datasets
-
 iris = datasets.load_iris()
-data = pd.DataFrame(data=np.c_[iris['data'], iris['target']], columns= iris['feature_names'] + ['target'])
+data = pd.DataFrame(data= np.c_[iris['data'], iris['target']], columns= iris['feature_names'] + ['target'])
+data.head()
 ```
+
+<div class="result">
+    <table>
+        <thead>
+            <tr style="text-align: right;">
+            <th></th>
+            <th>sepal length (cm)</th>
+            <th>sepal width (cm)</th>
+            <th>petal length (cm)</th>
+            <th>petal width (cm)</th>
+            <th>target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th>0</th>
+            <td>5.1</td>
+            <td>3.5</td>
+            <td>1.4</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>1</th>
+            <td>4.9</td>
+            <td>3.0</td>
+            <td>1.4</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>2</th>
+            <td>4.7</td>
+            <td>3.2</td>
+            <td>1.3</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>3</th>
+            <td>4.6</td>
+            <td>3.1</td>
+            <td>1.5</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>4</th>
+            <td>5.0</td>
+            <td>3.6</td>
+            <td>1.4</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 This block imports the necessary libraries, loads the Iris dataset using `sklearn.datasets`, and converts it into a pandas DataFrame for easier manipulation.
 
@@ -171,6 +225,9 @@ predictions = [predict(sample, tree) for sample in X]
 accuracy = np.sum(predictions == y) / len(y)
 print(f"Accuracy: {accuracy * 100:.2f}%")
 ```
+<div class="result" markdown>
+Accuracy: 100.00%
+</div>
 
 ## Using Scikit-learn for Decision Tree
 
@@ -192,8 +249,10 @@ plt.figure(figsize=(15, 10))
 plot_tree(clf, filled=True)
 plt.show()
 ```
-
+<div class="result" markdown>
+Accuracy: 100.00%
 ![Output](images/decision-tree-output.png)
+</div>
 
 Here `x[2]` is the petal length, `x[3]` is the petal width, orange color represents `setosa`, green represents `versicolor`, and purple represents `virginica`
 
