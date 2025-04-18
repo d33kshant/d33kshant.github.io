@@ -15,6 +15,7 @@
   font-size: .85em;
   overflow-x: auto;
   scrollbar-width: thin;
+  font-family: var(--md-code-font-family);
 }
 
 .md-typeset__table {
