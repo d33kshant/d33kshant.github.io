@@ -58,7 +58,7 @@ Hey, there! I am Deekshant, a data science intern and a master's student in arti
 
 ## Blogs
 
-I do not write alot but often share my learning, opinions or experience time to time. Here are some of the blogs I've written recently that you may found interesting.
+I do not write alot but often share my learning, opinions or experience time to time. I use AI to rectify and summaries the content to make it more expressive
 
 ### Recent Blogs
 
