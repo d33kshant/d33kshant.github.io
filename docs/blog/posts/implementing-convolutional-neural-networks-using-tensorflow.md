@@ -15,6 +15,9 @@ Convolutional Neural Networks (CNNs) are a class of deep learning models that ex
 
 <!-- more -->
 
+???+ abstract "AI Summary"
+    This document walks through the implementation of a basic Convolutional Neural Network (CNN) using TensorFlow, designed to classify images from the CIFAR-10 dataset. It introduces core CNN components such as convolutional, pooling, and dense layers, and explains their roles in feature extraction and classification. The model is built with TensorFlow's Keras API, trained for 10 epochs, and achieves around 70% test accuracy. Readers will also learn how to visualize training progress and evaluate model performance. This is a great starting point for beginners to understand how CNNs work and how to implement them from scratch.
+
 CNNs consist of layers such as:
 
 -   Convolutional layers, which apply learnable filters to detect features.
