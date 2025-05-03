@@ -55,45 +55,6 @@ Data Science Intern
 
 Hey, there! I am Deekshant, a data science intern and a master's student in artificial intelligence. I have a background in computer science and past experience as a full-stack web developer, mainly in backend. I enjoy working with Python, AI-ML and open-source projects. I also like writing about my experiences and sharing what I learn.
 
-
-## Blogs
-
-I do not write alot but often share my learning, opinions or experience time to time. I use AI to rectify and summaries the content to make it more expressive
-
-### Recent Blogs
-
-<div class="grid stack cards" markdown>
-
--   :material-text-box:{ .lg .middle } &nbsp; [Introduction to Machine Learning](blog/posts/introduction-to-machine-learning.md)
-
-    ---
-
-    <span class="text-description">
-    Have you ever wondered how Netflix knows exactly what show you might want to watch next? Or how your email automatically filters spam messages? Or maybe how your phone recognizes your face? All of these technological wonders are powered by machine learning.
-    </span>
-
--   :material-text-box:{ .lg .middle } &nbsp; [Implementing Convolutional Neural Networks using Tensorflow](blog/posts/implementing-convolutional-neural-networks-using-tensorflow.md)
-    
-    ---
-
-    <span class="text-description">
-    Convolutional Neural Networks (CNNs) are a class of deep learning models that excel at working with image data. Instead of processing each pixel independently (like in a fully connected neural network), CNNs use filters (or kernels) to scan across the image, capturing spatial hierarchies and local patterns like edges, textures, and shapes.
-    </span>
-
--   :material-text-box:{ .lg .middle } &nbsp; [Implementing Principal Component Analysis (PCA) from Scratch](blog/posts/implementing-principal-component-analysis-pca-from-scratch.md)
-    
-    ---
-    
-    <span class="text-description">
-    Principal Component Analysis (PCA) is a widely used technique for reducing the dimensionality of datasets while retaining the most important information. It does this by transforming correlated variables into a smaller set of uncorrelated variables called principal components.
-    <span>
-
-</div>
-
-[Read More](blog/index.md)
-
-
-
 ## Projects
 
 I prefer project based learning thats why I always try to apply my learning on small or big projects. Over the years I've worked on many projects related to Web, AI and Open Source.
@@ -137,3 +98,39 @@ I prefer project based learning thats why I always try to apply my learning on s
 </div>
 
 [Explore More](https://github.com/d33kshant?tab=repositories){ target="_blank" }
+
+## Blogs
+
+I do not write alot but often share my learning, opinions or experience time to time. I use AI to rectify and summaries the content to make it more expressive
+
+### Recent Blogs
+
+<div class="grid stack cards" markdown>
+
+-   :material-text-box:{ .lg .middle } &nbsp; [Introduction to Machine Learning](blog/posts/introduction-to-machine-learning.md)
+
+    ---
+
+    <span class="text-description">
+    Have you ever wondered how Netflix knows exactly what show you might want to watch next? Or how your email automatically filters spam messages? Or maybe how your phone recognizes your face? All of these technological wonders are powered by machine learning.
+    </span>
+
+-   :material-text-box:{ .lg .middle } &nbsp; [Implementing Convolutional Neural Networks using Tensorflow](blog/posts/implementing-convolutional-neural-networks-using-tensorflow.md)
+    
+    ---
+
+    <span class="text-description">
+    Convolutional Neural Networks (CNNs) are a class of deep learning models that excel at working with image data. Instead of processing each pixel independently (like in a fully connected neural network), CNNs use filters (or kernels) to scan across the image, capturing spatial hierarchies and local patterns like edges, textures, and shapes.
+    </span>
+
+-   :material-text-box:{ .lg .middle } &nbsp; [Implementing Principal Component Analysis (PCA) from Scratch](blog/posts/implementing-principal-component-analysis-pca-from-scratch.md)
+    
+    ---
+    
+    <span class="text-description">
+    Principal Component Analysis (PCA) is a widely used technique for reducing the dimensionality of datasets while retaining the most important information. It does this by transforming correlated variables into a smaller set of uncorrelated variables called principal components.
+    <span>
+
+</div>
+
+[Read More](blog/index.md)
