@@ -1,0 +1,1167 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Decision trees are powerful models that simulate human decision-making by breaking down complex problems into clear, step-by-step choices. They are widely used for classification and regression tasks, providing intuitive and interpretable results.">
+      
+      
+      
+        <link rel="canonical" href="https://d33kshant.github.io/blog/implementing-decision-tree-from-scratch/">
+      
+      
+        <link rel="prev" href="../implementing-logistic-regression-from-scratch/">
+      
+      
+        <link rel="next" href="../implementing-k-means-clustering-from-scratch/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>Implementing Decision Tree from Scratch - d33kshant</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M21%2013h-6.6l4.7%204.7-1.4%201.4-4.7-4.7V21h-2v-6.7L6.3%2019l-1.4-1.4L9.4%2013H3v-2h6.6L4.9%206.3l1.4-1.4L11%209.6V3h2v6.4l4.6-4.6L19%206.3%2014.3%2011H21z%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Implementing Decision Tree from Scratch - d33kshant" >
+      
+        <meta  property="og:description"  content="Decision trees are powerful models that simulate human decision-making by breaking down complex problems into clear, step-by-step choices. They are widely used for classification and regression tasks, providing intuitive and interpretable results." >
+      
+        <meta  property="og:image"  content="https://d33kshant.github.io/assets/images/social/blog/posts/implementing-decision-tree-from-scratch.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://d33kshant.github.io/blog/implementing-decision-tree-from-scratch/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Implementing Decision Tree from Scratch - d33kshant" >
+      
+        <meta  name="twitter:description"  content="Decision trees are powerful models that simulate human decision-making by breaking down complex problems into clear, step-by-step choices. They are widely used for classification and regression tasks, providing intuitive and interpretable results." >
+      
+        <meta  name="twitter:image"  content="https://d33kshant.github.io/assets/images/social/blog/posts/implementing-decision-tree-from-scratch.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implementing-decision-tree-from-scratch" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="d33kshant" class="md-header__button md-logo" aria-label="d33kshant" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2M9 7v10h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm2 2h2v6h-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            d33kshant
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implementing Decision Tree from Scratch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="d33kshant" class="md-nav__button md-logo" aria-label="d33kshant" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2M9 7v10h4a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm2 2h2v6h-2z"/></svg>
+
+    </a>
+    d33kshant
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Blog
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    All Blogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorial
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-of-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation of Decision Tree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation of Decision Tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-import-libraries-and-load-the-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Import Libraries and Load the Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-calculate-gini-impurity" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Calculate Gini Impurity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-perform-data-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Perform Data Splitting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-calculate-information-gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Calculate Information Gain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-find-the-best-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Find the Best Split
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-build-the-decision-tree-recursively" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Build the Decision Tree Recursively
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-make-predictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Make Predictions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-running-and-evaluating-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Running and Evaluating The Model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-scikit-learn-for-decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Scikit-learn for Decision Tree
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="data:image/jpeg;base64,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" alt="Deekshant Yadav">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/d33kshant">Deekshant Yadav</a>
+                        
+                      </strong>
+                      <br>
+                      Data Scientist Intern
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2024-05-30 00:00:00+00:00" class="md-ellipsis">May 30, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/tutorial/">Tutorial</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              5 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="implementing-decision-tree-from-scratch">Implementing Decision Tree from Scratch<a class="headerlink" href="#implementing-decision-tree-from-scratch" title="Permanent link">&para;</a></h1>
+<p>Decision trees are powerful models that simulate human decision-making by breaking down complex problems into clear, step-by-step choices. They are widely used for classification and regression tasks, providing intuitive and interpretable results.</p>
+<!-- more -->
+
+<p><a href="https://colab.research.google.com/drive/1z8F_i4kNYndX4swg8C92hWw9GOPUsnx_"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<details class="abstract" open="open">
+<summary>AI Summary</summary>
+<p>This blog offers a detailed exploration of decision trees, focusing on their mathematical foundations and practical applications. It explains concepts like Gini impurity, information gain, and data splitting, providing a clear understanding of how decision trees make decisions. Through a step-by-step approach, readers gain insights into building and evaluating decision trees. The blog concludes with a comparison to a standard implementation, reinforcing the learning experience.</p>
+</details>
+<h2 id="what-is-decision-tree">What is Decision Tree<a class="headerlink" href="#what-is-decision-tree" title="Permanent link">&para;</a></h2>
+<p>A decision tree is a supervised machine learning algorithm used for classification and regression tasks. It is a tree-like structure where each internal node represents a decision based on a specific feature, each branch represents the outcome of that decision, and each leaf node provides the final prediction.</p>
+<h2 id="understanding-decision-tree">Understanding Decision Tree<a class="headerlink" href="#understanding-decision-tree" title="Permanent link">&para;</a></h2>
+<p>The core idea behind decision trees is to minimize impurity when making splits. The impurity of a node can be measured using metrics like:</p>
+<ol>
+<li>
+<p><strong>Gini Impurity</strong>:  measure of how mixed or impure a dataset is, commonly used in decision tree algorithms to determine the best way to split data for classification</p>
+<div class="arithmatex">\[
+Gini(D) = 1 - \sum_{i=1}^{C} p_i^2
+\]</div>
+<p>where <span class="arithmatex">\(p_i\)</span> is the probability of class <span class="arithmatex">\(i\)</span> in the dataset <span class="arithmatex">\(D\)</span>.</p>
+</li>
+<li>
+<p><strong>Entropy</strong>: Entropy measures the disorder or randomness in a dataset. It's calculated by summing the weighted probabilities of each possible outcome, using the logarithm of the probabilities</p>
+<div class="arithmatex">\[
+H(D) = - \sum_{i=1}^{C} p_i \log_2 p_i
+\]</div>
+<p>The goal is to select the split that results in the lowest weighted impurity of the child nodes.</p>
+</li>
+<li>
+<p><strong>Information Gain</strong>: Information gain measures the reduction in entropy (or increase in purity) achieved by splitting a dataset on a particular feature, The information gain for a split is calculated as:</p>
+<div class="arithmatex">\[
+IG = H(D) - \sum_{i=1}^{k} \frac{|D_i|}{|D|} H(D_i)
+\]</div>
+<p>where <span class="arithmatex">\(D_i\)</span> represents the subsets resulting from the split.</p>
+</li>
+</ol>
+<h2 id="implementation-of-decision-tree">Implementation of Decision Tree<a class="headerlink" href="#implementation-of-decision-tree" title="Permanent link">&para;</a></h2>
+<h3 id="1-import-libraries-and-load-the-dataset">1. Import Libraries and Load the Dataset<a class="headerlink" href="#1-import-libraries-and-load-the-dataset" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div>
+<div class="result">
+    <table>
+        <thead>
+            <tr style="text-align: right;">
+            <th></th>
+            <th>sepal length (cm)</th>
+            <th>sepal width (cm)</th>
+            <th>petal length (cm)</th>
+            <th>petal width (cm)</th>
+            <th>target</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th>0</th>
+            <td>5.1</td>
+            <td>3.5</td>
+            <td>1.4</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>1</th>
+            <td>4.9</td>
+            <td>3.0</td>
+            <td>1.4</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>2</th>
+            <td>4.7</td>
+            <td>3.2</td>
+            <td>1.3</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>3</th>
+            <td>4.6</td>
+            <td>3.1</td>
+            <td>1.5</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+            <tr>
+            <th>4</th>
+            <td>5.0</td>
+            <td>3.6</td>
+            <td>1.4</td>
+            <td>0.2</td>
+            <td>0.0</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>This block imports the necessary libraries, loads the Iris dataset using <code>sklearn.datasets</code>, and converts it into a pandas DataFrame for easier manipulation.</p>
+<h3 id="2-calculate-gini-impurity">2. Calculate Gini Impurity<a class="headerlink" href="#2-calculate-gini-impurity" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gini_impurity</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">classes</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">probabilities</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">probabilities</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<p>This function calculates the Gini impurity of a given set of labels. It is used to measure how impure a node is, with 0 indicating perfect purity.</p>
+<h3 id="3-perform-data-splitting">3. Perform Data Splitting<a class="headerlink" href="#3-perform-data-splitting" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">split_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+    <span class="n">left_mask</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">feature_index</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">threshold</span>
+    <span class="n">right_mask</span> <span class="o">=</span> <span class="o">~</span><span class="n">left_mask</span>
+    <span class="k">return</span> <span class="n">X</span><span class="p">[</span><span class="n">left_mask</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">right_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">left_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">right_mask</span><span class="p">]</span>
+</code></pre></div>
+<p>This function splits the dataset based on a specified feature and threshold. It returns the left and right subsets of features and labels.</p>
+<h3 id="4-calculate-information-gain">4. Calculate Information Gain<a class="headerlink" href="#4-calculate-information-gain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">information_gain</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+    <span class="n">parent_impurity</span> <span class="o">=</span> <span class="n">gini_impurity</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">X_left</span><span class="p">,</span> <span class="n">X_right</span><span class="p">,</span> <span class="n">y_left</span><span class="p">,</span> <span class="n">y_right</span> <span class="o">=</span> <span class="n">split_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">left_weight</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_left</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">right_weight</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_right</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">gain</span> <span class="o">=</span> <span class="n">parent_impurity</span> <span class="o">-</span> <span class="p">(</span><span class="n">left_weight</span> <span class="o">*</span> <span class="n">gini_impurity</span><span class="p">(</span><span class="n">y_left</span><span class="p">)</span> <span class="o">+</span> <span class="n">right_weight</span> <span class="o">*</span> <span class="n">gini_impurity</span><span class="p">(</span><span class="n">y_right</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">gain</span>
+</code></pre></div>
+<p>This function calculates the information gain from splitting the data using a specific feature and threshold.</p>
+<h3 id="5-find-the-best-split">5. Find the Best Split<a class="headerlink" href="#5-find-the-best-split" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">find_best_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">best_gain</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">best_feature</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">best_threshold</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">feature_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">thresholds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="n">feature_index</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">threshold</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+            <span class="n">gain</span> <span class="o">=</span> <span class="n">information_gain</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">gain</span> <span class="o">&gt;</span> <span class="n">best_gain</span><span class="p">:</span>
+                <span class="n">best_gain</span> <span class="o">=</span> <span class="n">gain</span>
+                <span class="n">best_feature</span> <span class="o">=</span> <span class="n">feature_index</span>
+                <span class="n">best_threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+    <span class="k">return</span> <span class="n">best_feature</span><span class="p">,</span> <span class="n">best_threshold</span>
+</code></pre></div>
+<p>This function iterates over all features and possible thresholds to find the best split with the highest information gain.</p>
+<h3 id="6-build-the-decision-tree-recursively">6. Build the Decision Tree Recursively<a class="headerlink" href="#6-build-the-decision-tree-recursively" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">build_tree</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">depth</span> <span class="o">==</span> <span class="n">max_depth</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)))</span>
+
+    <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span> <span class="o">=</span> <span class="n">find_best_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">feature_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)))</span>
+
+    <span class="n">X_left</span><span class="p">,</span> <span class="n">X_right</span><span class="p">,</span> <span class="n">y_left</span><span class="p">,</span> <span class="n">y_right</span> <span class="o">=</span> <span class="n">split_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+    <span class="n">left_subtree</span> <span class="o">=</span> <span class="n">build_tree</span><span class="p">(</span><span class="n">X_left</span><span class="p">,</span> <span class="n">y_left</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_depth</span><span class="p">)</span>
+    <span class="n">right_subtree</span> <span class="o">=</span> <span class="n">build_tree</span><span class="p">(</span><span class="n">X_right</span><span class="p">,</span> <span class="n">y_right</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_depth</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">left_subtree</span><span class="p">,</span> <span class="n">right_subtree</span><span class="p">)</span>
+</code></pre></div>
+<p>This recursive function builds the decision tree by selecting the best split, creating subtrees, and returning the tree structure as a tuple.</p>
+<h3 id="7-make-predictions">7. Make Predictions<a class="headerlink" href="#7-make-predictions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">tree</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">tree</span>
+    <span class="n">feature_index</span><span class="p">,</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">left_subtree</span><span class="p">,</span> <span class="n">right_subtree</span> <span class="o">=</span> <span class="n">tree</span>
+    <span class="k">if</span> <span class="n">sample</span><span class="p">[</span><span class="n">feature_index</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">predict</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">left_subtree</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">predict</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">right_subtree</span><span class="p">)</span>
+</code></pre></div>
+<p>This function traverses the tree for a given input sample and returns the predicted class.</p>
+<h3 id="8-running-and-evaluating-the-model">8. Running and Evaluating The Model<a class="headerlink" href="#8-running-and-evaluating-the-model" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">tree</span> <span class="o">=</span> <span class="n">build_tree</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="p">[</span><span class="n">predict</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">tree</span><span class="p">)</span> <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">X</span><span class="p">]</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">predictions</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="result">
+<p>Accuracy: 100.00%</p>
+</div>
+<h2 id="using-scikit-learn-for-decision-tree">Using Scikit-learn for Decision Tree<a class="headerlink" href="#using-scikit-learn-for-decision-tree" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span><span class="p">,</span> <span class="n">plot_tree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<div class="result">
+<p>Accuracy: 100.00%
+<img alt="Output" src="../images/decision-tree-output.png" /></p>
+</div>
+<p>Here <code>x[2]</code> is the petal length, <code>x[3]</code> is the petal width, orange color represents <code>setosa</code>, green represents <code>versicolor</code>, and purple represents <code>virginica</code></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>In this blog, we learned how decision trees work by implementing one from scratch using NumPy and pandas in a functional, procedural style. We calculated Gini impurity, found the best split using information gain, and recursively built a tree. After that, we compared our implementation with the <code>scikit-learn</code> decision tree classifier. This exercise helps in building a solid understanding of decision trees, which are a foundation for more advanced algorithms like random forests and gradient boosting.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+    data-repo="d33kshant/d33kshant.github.io"
+    data-repo-id="R_kgDOGoHh2g"
+    data-category="Comments"
+    data-category-id="DIC_kwDOGoHh2s4CoPl3"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="en"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../implementing-logistic-regression-from-scratch/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Implementing Logistic Regression from Scratch">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Implementing Logistic Regression from Scratch
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../implementing-k-means-clustering-from-scratch/" class="md-footer__link md-footer__link--next" aria-label="Next: Implementing K Means Clustering From Scratch">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Implementing K Means Clustering From Scratch
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025, Deekshant Yadav
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/d33kshant" target="_blank" rel="noopener" title="d33kshant on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://linkedin.com/in/deekshantyadav" target="_blank" rel="noopener" title="d33kshant on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.footnote.tooltips", "navigation.expand", "navigation.footer", "navigation.instant", "navigation.instant.progress", "navigation.top", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
