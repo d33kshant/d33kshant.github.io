@@ -31,11 +31,11 @@ hide:
 
 /// caption
 <span style="font-style: normal; font-size: 1.4em;">
-Deekshant Yadav
+deekshant &nbsp;•&nbsp; <span style="font-style: normal; opacity: .6;">दीक्षांत</span>
 </span>
 <br>
 <span style="font-style: normal; opacity: .6;">
-Data Science Intern
+data scientist 
 </span>
 ///
 
@@ -53,7 +53,7 @@ Data Science Intern
 
 # d33kshant
 
-Hey, there! I am Deekshant, a data science intern and a master's student in artificial intelligence. I have a background in computer science and past experience as a full-stack web developer, mainly in backend. I enjoy working with Python, AI-ML and open-source projects. I also like writing about my experiences and sharing what I learn.
+data scientist with an masters in ai and bachelors in cs, working on ai and ml driven automation for mnc. indie developer building apps, games and ai tools with a passion for open source
 
 ## Projects
 
@@ -62,6 +62,13 @@ I prefer project based learning thats why I always try to apply my learning on s
 ### Pinned Projects
 
 <div class="grid cards" markdown>
+-   :material-music-box:{ .lg .middle } &nbsp; Music Generator with LSTM 
+
+    ---
+    
+    A jazz music generator for an indie game using LSTM neural network
+
+    [Open In Google Colab](https://colab.research.google.com/drive/1zvcvV1bb66co5XRaTg0235SZp3fcMq40?usp=sharing){ target="_blank" }
 
 -   :material-chart-box:{ .lg .middle } &nbsp; Stock Price Prediction with LSTM
 
@@ -79,14 +86,6 @@ I prefer project based learning thats why I always try to apply my learning on s
 
     [View](https://hmm-i86r.onrender.com/){ target="_blank" } &nbsp;&nbsp; [Open In Google Colab](https://colab.research.google.com/drive/1Y9I-IkZ3Q-dykvCpXLqcIoLoXMuwKkdf?usp=sharing){ target="_blank" }
 
--   :material-web-box:{ .lg .middle } &nbsp; Store w/ Recommendation System
-
-    ---
-
-    An online commerece platform with content based recommendation system
-
-    [View](https://bookstore-three-psi.vercel.app/){ target="_blank" } &nbsp;&nbsp; [Open In GitHub](https://github.com/d33kshant/bookstore){ target="_blank" }
-
 -   :material-drawing-box:{ .lg .middle } &nbsp; Snake Game Bot
 
     ---
@@ -97,7 +96,7 @@ I prefer project based learning thats why I always try to apply my learning on s
 
 </div>
 
-[Explore More](https://github.com/d33kshant?tab=repositories){ target="_blank" }
+[Explore More](projects.md)
 
 ## Blogs
 
