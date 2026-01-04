@@ -27,7 +27,7 @@ hide:
     }
 </style>
 
-![Avatar](https://github.com/d33kshant.png){ class="avatar" }  
+![Avatar](avatar.jpeg){ class="avatar" }  
 
 /// caption
 <span style="font-style: normal; font-size: 1.4em;">

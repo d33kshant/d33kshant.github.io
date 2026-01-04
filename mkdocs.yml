@@ -5,9 +5,9 @@ copyright: Copyright &copy; 2026, Deekshant Yadav
 theme:
   name: material
   icon:
-    logo: material/alpha-d-circle
+    logo: material/asterisk
     admonition:
-      abstract: material/asterisk
+      abstract: octicons/sparkle-fill-24
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
