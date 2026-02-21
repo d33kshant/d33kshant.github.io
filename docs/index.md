@@ -31,7 +31,7 @@ hide:
 
 /// caption
 <span style="font-style: normal; font-size: 1.4em;">
-deekshant &nbsp;•&nbsp; <span style="font-style: normal; opacity: .6;">दीक्षांत</span>
+deekshant
 </span>
 <br>
 <span style="font-style: normal; opacity: .6;">
@@ -53,7 +53,30 @@ data scientist
 
 # d33kshant
 
-data scientist with an masters in ai and bachelors in cs, working on ai and ml driven automation for mnc. indie developer building apps, games and ai tools with a passion for open source
+I am a data scientist with a masters in artificial intelligence and a bachelors in computer science. specialized and experienced in ai and machine learning based automation and analysis, I have very keen interest in ai & ml, open source and software development.
+
+## Experience
+
+<div class="grid cards">
+    <ul>
+        <li>
+            <p style="display: flex; align-items: center;">
+                <img src="https://www.novartis.com//themes/custom/polaris/favicon.ico" style="height: 18px; width: 18px; margin-right: 10px;">
+                <strong style="flex: 1;">Novartis</strong>
+                <span>Hyderabad, India</span>
+            </p>
+            <hr>
+            <div style="display: flex; justify-content: space-between;">
+                <p><strong>Data Scientist</strong></p>
+                <p>2025 - Present</p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p><strong>Data Science Intern</strong></p>
+                <p>2024 - 2025</p>
+            </div>
+        </li>
+    </ul>
+</div>
 
 ## Projects
 
