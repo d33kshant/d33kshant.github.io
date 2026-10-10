@@ -61,18 +61,39 @@ I am a data scientist with a masters in artificial intelligence and a bachelors 
     <ul>
         <li>
             <p style="display: flex; align-items: center;">
-                <img src="https://www.novartis.com//themes/custom/polaris/favicon.ico" style="height: 18px; width: 18px; margin-right: 10px;">
-                <strong style="flex: 1;">Novartis</strong>
+                <img src="amgen.jpg" style="height: 18px; width: 18px; margin-right: 10px; border-radius: 2px;">
+                <strong style="flex: 1;">Amgen</strong>
                 <span>Hyderabad, India</span>
             </p>
             <hr>
             <div style="display: flex; justify-content: space-between;">
-                <p><strong>Data Scientist</strong></p>
-                <p>2025 - Present</p>
+                <p><strong>Associate Data Scientist</strong></p>
+                <p>Oct 2026 - Present</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="grid cards">
+    <ul>
+        <li>
+            <p style="display: flex; align-items: center;">
+                <img src="novartis.jpg" style="height: 18px; width: 18px; margin-right: 10px; border-radius: 2px;">
+                <span style="flex: 1;">
+                    <strong>Novartis</strong>
+                    <span style="margin-left: 2px; margin-right: 2px;">-</span>
+                    <span style="opacity: .8">2 years 2 months</span>
+                </span>
+                <span>Hyderabad, India</span>
+            </p>
+            <hr>
+            <div style="display: flex; justify-content: space-between;">
+                <p><strong>Associate Data Scientist</strong></p>
+                <p>Aug 2025 - Sep 2026</p>
             </div>
             <div style="display: flex; justify-content: space-between;">
-                <p><strong>Data Science Intern</strong></p>
-                <p>2024 - 2025</p>
+                <p><strong>Intern Data Scientist</strong></p>
+                <p>Aug 2024 - Jul 2025</p>
             </div>
         </li>
     </ul>
